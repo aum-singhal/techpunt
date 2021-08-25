@@ -15,12 +15,17 @@ firebase.initializeApp(firebaseConfig);
 
 // variable intialisation
 var auth = firebase.auth();
+var nameReg = document.registerForm.name; // name feild in register form
+var emailReg = document.registerForm.email; // email feild in register form
+var passReg = document.registerForm.password; // password feild in register form
+var emailLog = document.loginFrom.email; // email feild in login form
+var passLog = document.loginForm.password; // password feild in register form
 
 
 // password and email validation functions
 function passValidate(password){
     var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
-    if(password == null){
+    if(password == null || password == ""){
         alert("Password feild cannot be empty");
         return false;
     }
@@ -37,7 +42,7 @@ function passValidate(password){
 }
 
 function emailValidate(email){
-    if(email == null){
+    if(email == null || email == ""){
         alert("Email feild cannot be empty");
         return false;
     }else{
@@ -46,7 +51,7 @@ function emailValidate(email){
 }
 
 function nameValidate(name){
-    if(name == null){
+    if(name == null || name == ""){
         alert("Name feild cannot be empty");
         return false;
     }
@@ -60,14 +65,16 @@ function nameValidate(name){
 // Register function
 function register(){
 
-    if(passValidate(document.getElementById("password").value) && emailValidate(document.getElementById("email").vlaue) && nameValidate(document.getElementById("name").vlaue)){
-        auth.createUserWithEmailAndPassword(document.getElementById("email").value , document.getElementById("password").value)
+    if(passValidate(passReg.value) && emailValidate(emailReg.value) && nameValidate(nameReg.value)){
+        auth.createUserWithEmailAndPassword(emailReg.value , passReg.value)
         .then( function(User){
 
             firebase.database().ref('users/' + User.user.uid).set({
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value
+                name: nameReg.value,
+                email: emailReg.value
             })
+
+            window.location.href = "../login/login.html";
             
         }).catch(
             function(error){
@@ -79,14 +86,21 @@ function register(){
 
 // Login initialisation
 function login(){
-    auth.signInWithEmailAndPassword(document.getElementById("email").value , document.getElementById("password").value)
+    auth.signInWithEmailAndPassword(emailLog.value , passLog.value)
     .then((userCredential) => {
-      // Signed in
-      var user = userCredential.user;
-
-      // ...
+        // Signed in
+        var user = userCredential.user;
+        window.location.href = "../login/login.html";
+        dashbaord();
+        // ...
     })
     .catch((error) => {
       alert(error.message)
     });
+}
+
+
+// Dashboard function
+function dashbaord(){
+    
 }
