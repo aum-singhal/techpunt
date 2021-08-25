@@ -17,23 +17,64 @@ firebase.initializeApp(firebaseConfig);
 var auth = firebase.auth();
 
 
+// password and email validation functions
+function passValidate(password){
+    var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+    if(password == null){
+        alert("Password feild cannot be empty");
+        return false;
+    }
+    else if(password.length < 6){
+        alert("Password cannot be less than 6 characters");
+    }
+    else if(password.match(passw)){
+        return true;
+    }
+    else{
+        alert("Password is too weak. Trying using atleast one number, smalls and capital characters");
+        return false;
+    }
+}
+
+function emailValidate(email){
+    if(email == null){
+        alert("Email feild cannot be empty");
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function nameValidate(name){
+    if(name == null){
+        alert("Name feild cannot be empty");
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
+
+
 // Register function
 function register(){
 
-    auth.createUserWithEmailAndPassword(document.getElementById("email").value , document.getElementById("password").value)
-    .then( function(User){
+    if(passValidate(document.getElementById("password").value) && emailValidate(document.getElementById("email").vlaue) && nameValidate(document.getElementById("name").vlaue)){
+        auth.createUserWithEmailAndPassword(document.getElementById("email").value , document.getElementById("password").value)
+        .then( function(User){
 
-        firebase.database().ref('users/' + User.user.uid).set({
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value
-        })
-        
-    }).catch(
-        function(error){
-            alert(error.message);
-        }
-    )
-
+            firebase.database().ref('users/' + User.user.uid).set({
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value
+            })
+            
+        }).catch(
+            function(error){
+                alert(error.message);
+            }
+        )
+    }    
 }
 
 // Login initialisation
