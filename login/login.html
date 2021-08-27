@@ -15,42 +15,44 @@
 <body>
     
     <!-- ======================== Main Row ========================= -->
-    <div class="main row justify-content-center align-items-center">
+    <div class="body">
+        <div class="container main row justify-content-center align-items-center">
 
-        <!-- ========================== Image column ====================== -->
-        <div class="image col-md-6">
-            <img src="../assets/images/login-image.png" width="100%" height="auto" alt="Register Image" >
+            <!-- ========================== Image column ====================== -->
+            <div class="image col-md-6">
+                <img src="../assets/images/login-image.png" width="100%" height="auto" alt="Register Image" >
+            </div>
+
+            <!-- ========================== Form column ======================== -->
+            <div class="login col-sm-6">
+
+                <!-- ========================== Login Heading ====================== -->
+                <div class="login-heading">
+                    Login
+                </div>
+
+                <!-- ============================= Login Form ============================ -->
+                <div class="login-form">
+                    <form action="" name="loginForm" class="form">
+                        <div class="feild">
+                            <label for="">Email</label>
+                            <br>
+                            <input type="email" name="email" id="email" placeholder="Enter Email">
+                        </div>
+                        <div class="feild">
+                            <label for="">Password</label>
+                            <br>
+                            <input type="password" name="password" id="password" placeholder="Enter Password">
+                        </div>
+                        <button type="button" id="submit" onclick="login()">Login</button>
+                        <a href="../signup/signup.html">Don't have an account? Login</a>
+                    </form>
+                </div>
+                
+            </div>  
         </div>
-
-        <!-- ========================== Form column ======================== -->
-        <div class="login col-sm-5">
-
-            <!-- ========================== Login Heading ====================== -->
-            <div class="login-heading">
-                Login
-            </div>
-
-            <!-- ============================= Login Form ============================ -->
-            <div class="login-form">
-                <form action="" name="loginForm" class="form">
-                    <div class="feild">
-                        <label for="">Email</label>
-                        <br>
-                        <input type="email" name="email" id="email" placeholder="Enter Email">
-                    </div>
-                    <div class="feild">
-                        <label for="">Password</label>
-                        <br>
-                        <input type="password" name="password" id="password" placeholder="Enter Password">
-                    </div>
-                    <button type="button" id="submit" onclick="login()">Login</button>
-                    <a href="../signup/signup.html">Don't have an account? Login</a>
-                </form>
-            </div>
-            
-        </div>  
     </div>
-
+    
     <!-- ==================================================================== -->
     <!-- =========================== Java Script ============================ -->
 

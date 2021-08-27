@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-body{
+.body{
     width: 99vw;
     height: 100vh   ;
     display: flex;

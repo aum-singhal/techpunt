@@ -14,47 +14,49 @@
 <body>
     
     <!-- ======================== Main Row ========================= -->
-    <div class="main row justify-content-between align-items-center">
+    <div class="body">
+        <div class="container main row justify-content-between align-items-center">
 
-        <!-- ========================== Image column ====================== -->
-        <div class="image col-md-5">
-            <img src="../assets/images/signup-image.png" width="100%" height="auto" alt="Register Image" >
+            <!-- ========================== Image column ====================== -->
+            <div class="image col-md-5">
+                <img src="../assets/images/signup-image.png" width="100%" height="auto" alt="Register Image" >
+            </div>
+
+            <!-- ========================== Form column ======================== -->
+            <div class="register col-sm-6">
+
+                <!-- ====================== Register Heading ====================== -->
+                <div class="register-heading">
+                    Register
+                </div>
+
+                <!-- ========================== Register Form ============================ -->
+                <div class="register-form">
+                    <form action="" name="registerForm" class="form">
+                        <div class="feild">
+                            <label for="">Name</label>
+                            <br>
+                            <input type="text" name="name" id="name" placeholder="Enter Full Name">
+                        </div>
+                        <div class="feild">
+                            <label for="">Email</label>
+                            <br>
+                            <input type="email" name="email" id="email" placeholder="Enter Email">
+                        </div>
+                        <div class="feild">
+                            <label for="">Password</label>
+                            <br>
+                            <input type="password" name="password" id="password" placeholder="Enter Password">
+                        </div>
+                        <button type="button" id="submit" onclick="register()">Register</button>
+                        <a href="../login/login.html">Already have an account? Login</a>
+                    </form>
+                </div>
+                
+            </div>  
         </div>
-
-        <!-- ========================== Form column ======================== -->
-        <div class="register col-sm-5">
-
-            <!-- ====================== Register Heading ====================== -->
-            <div class="register-heading">
-                Register
-            </div>
-
-            <!-- ========================== Register Form ============================ -->
-            <div class="register-form">
-                <form action="" name="registerForm" class="form">
-                    <div class="feild">
-                        <label for="">Name</label>
-                        <br>
-                        <input type="text" name="name" id="name" placeholder="Enter Full Name">
-                    </div>
-                    <div class="feild">
-                        <label for="">Email</label>
-                        <br>
-                        <input type="email" name="email" id="email" placeholder="Enter Email">
-                    </div>
-                    <div class="feild">
-                        <label for="">Password</label>
-                        <br>
-                        <input type="password" name="password" id="password" placeholder="Enter Password">
-                    </div>
-                    <button type="button" id="submit" onclick="register()">Register</button>
-                    <a href="../login/login.html">Already have an account? Login</a>
-                </form>
-            </div>
-            
-        </div>  
     </div>
-
+    
     <!-- ==================================================================== -->
     <!-- =========================== Java Script ============================ -->
 
