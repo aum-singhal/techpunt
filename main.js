@@ -90,8 +90,7 @@ function login(){
     .then((userCredential) => {
         // Signed in
         var user = userCredential.user;
-        window.location.href = "../login/login.html";
-        dashbaord();
+        dashbaord(user.uid);
         // ...
     })
     .catch((error) => {
@@ -101,6 +100,14 @@ function login(){
 
 
 // Dashboard function
-function dashbaord(){
-    
+function dashbaord(useruid){
+    window.location.href = "../login/login.html";
+
+    firebase.database().ref('users/' + useruid).on('value', (snapshot) => {
+        const data = snapshot.val();
+        // updateStarCount(postElement, data);
+        document.getElementById("name").innerHTML = data.name
+        document.getElementById("email").innerHTML = data.email
+      }
+    );
 }
