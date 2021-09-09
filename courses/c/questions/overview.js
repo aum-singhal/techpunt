@@ -1,112 +1,110 @@
-const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementById('next-btn')
-const questionContainerElement = document.getElementById('question-container')
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
+const question = document.querySelector('#question');
+const choices = Array.from(document.querySelectorAll('.choice-text'));
+const progressText = document.querySelector('#progressText');
+const scoreText = document.querySelector('#score');
+const progressBarFull = document.querySelector('#progressBarFull');
 
-let shuffledQuestions, currentQuestionIndex
+let currentQuestion = {}
+let acceptingAnswers = true
+let score = 0
+let questionCounter = 0
+let availableQuestions = []
 
-startButton.addEventListener('click', startGame)
-nextButton.addEventListener('click', () => {
-  currentQuestionIndex++
-  setNextQuestion()
+let questions = [
+    {
+        question: "Why is C language used in making operating systems?",
+        choice1: "High-level language",
+        choice2: "Large Standard Library",
+        choice3: "Object-Oriented",
+        choice4: "Structured language",
+        answer: 4,
+    },
+    {
+        question: "Who is the father of the C Programming Language?",
+        choice1: "Bjarne Stroustrup",
+        choice2: "James A. Gosling",
+        choice3: "Dennis Ritchie",
+        choice4: "Dr. E.F. Cod",
+        answer: 3,
+    },
+    {
+        question: "Why is C language used in making operating systems?",
+        choice1: "High-level language",
+        choice2: "Large Standard Library",
+        choice3: "Object-Oriented",
+        choice4: "Structured language",
+        answer: 4,
+    },
+    {
+        question: "Why is C language used in making operating systems?",
+        choice1: "High-level language",
+        choice2: "Large Standard Library",
+        choice3: "Object-Oriented",
+        choice4: "Structured language",
+        answer: 4,
+    },
+]
+
+const scorePoints = 40
+const maxQuestions = 4
+
+startGame = () => {
+    questionCounter = 0
+    score = 0
+    availableQuestions = [...questions]
+    getNewQuestion()
+}
+
+getNewQuestion = () => {
+    if(availableQuestions.length === 0 || questionCounter > maxQuestions){
+        localStorage.setItem('mostRecentScore', score)
+        return window.location.assign('/end.html')
+    }
+
+    questionCounter++
+    progressText.innerText = `Question ${questionCounter} of ${maxQuestions}`
+    progressBarFull.style.width = `${(questionCounter/maxQuestions) * 100}`
+
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
+    currentQuestion = availableQuestions[questionsIndex]
+    question.innerText = currentQuestion.question
+
+    choices.forEach(choice => {
+        const number = choice.dataset['number']
+        choice.innerText = currentQuestion['choice' + number]
+    })
+
+    availableQuestions.splice(questionsIndex, 1)
+
+    acceptingAnswers = true
+}
+
+choices.forEach(choice => {
+    choice.addEventListener('click', e => {
+        if(!acceptingAnswers) return
+
+        acceptingAnswers = false
+        const selectedChoice = e.target
+        const selectedAnswer = selectedChoice.dataset['number']
+
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+
+        if(classToApply === 'correct'){
+            incrementScore(scorePoints)
+        }
+
+        selectedChoice.parentElement.classList.add(classToApply)
+
+        setTimeout( () => {
+            selectedChoice.parentElement.classList.remove(classToApply)
+            getNewQuestion()
+        }, 1000)
+    })
 })
 
-function startGame() {
-  startButton.classList.add('hide')
-  shuffledQuestions = questions.sort(() => Math.random() - .5)
-  currentQuestionIndex = 0
-  questionContainerElement.classList.remove('hide')
-  setNextQuestion()
+incrementScore = num => {
+    score += num
+    scoreText.innerText = score
 }
 
-function setNextQuestion() {
-  resetState()
-  showQuestion(shuffledQuestions[currentQuestionIndex])
-}
-
-function showQuestion(question) {
-  questionElement.innerText = question.question
-  question.answers.forEach(answer => {
-    const button = document.createElement('button')
-    button.innerText = answer.text
-    button.classList.add('btn')
-    if (answer.correct) {
-      button.dataset.correct = answer.correct
-    }
-    button.addEventListener('click', selectAnswer)
-    answerButtonsElement.appendChild(button)
-  })
-}
-
-function resetState() {
-  clearStatusClass(document.body)
-  nextButton.classList.add('hide')
-  while (answerButtonsElement.firstChild) {
-    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-  }
-}
-
-function selectAnswer(e) {
-  const selectedButton = e.target
-  const correct = selectedButton.dataset.correct
-  setStatusClass(document.body, correct)
-  Array.from(answerButtonsElement.children).forEach(button => {
-    setStatusClass(button, button.dataset.correct)
-  })
-  if (shuffledQuestions.length > currentQuestionIndex + 1) {
-    nextButton.classList.remove('hide')
-  } else {
-    startButton.innerText = 'Restart'
-    startButton.classList.remove('hide')
-  }
-}
-
-function setStatusClass(element, correct) {
-  clearStatusClass(element)
-  if (correct) {
-    element.classList.add('correct')
-  } else {
-    element.classList.add('wrong')
-  }
-}
-
-function clearStatusClass(element) {
-  element.classList.remove('correct')
-  element.classList.remove('wrong')
-}
-
-const questions = [
-  {
-    question: 'What is 2 + 2?',
-    answers: [
-      { text: '4', correct: true },
-      { text: '22', correct: false }
-    ]
-  },
-  {
-    question: 'Who is the best YouTuber?',
-    answers: [
-      { text: 'Web Dev Simplified', correct: true },
-      { text: 'Traversy Media', correct: true },
-      { text: 'Dev Ed', correct: true },
-      { text: 'Fun Fun Function', correct: true }
-    ]
-  },
-  {
-    question: 'Is web development fun?',
-    answers: [
-      { text: 'Kinda', correct: false },
-      { text: 'YES!!!', correct: true },
-      { text: 'Um no', correct: false },
-      { text: 'IDK', correct: false }
-    ]
-  },
-  {
-    question: 'What is 4 * 2?',
-    answers: [
-      { text: '6', correct: false },
-      { text: '8', correct: true }
-    ]
-  }
-]
+startGame()
