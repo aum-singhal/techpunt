@@ -1,0 +1,109 @@
+/* =====================    FONTS   =============== */
+@import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+/* =====================VARIABLES====================== */
+
+:root{
+    --font-color-light: #696969;
+    --font-color-dark: black;
+    --background-color:	#FAF9F6;
+    --blue: #00B9FF;
+    --font-size-normal: 1em;
+    --font-size-large: 1.5em;
+}
+
+*{
+    margin:0;
+    padding: 0;
+    background-color: var(--background-color);
+    box-sizing: border-box;
+    
+}
+
+/* ======================NAVBAR=================== */
+
+ul,li ,a, button {
+    font-family: "Merriweather", sans-serif;
+    font-weight: 400;
+    font-size: var(--font-size-normal);
+    text-decoration: none ;
+    color: var(--font-color-light) ;
+}
+
+.logo{
+    margin-right: auto;
+    font-family: "Merriweather", sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: var(--font-size-large);
+    color:var(--font-color-dark);
+}
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0.625em 5%;
+}
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0em 0.625em;
+}
+
+.nav__links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a::after{
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-image:linear-gradient(90deg,#00B9FF, #92e2ff);
+
+}
+
+.nav__links a:hover::after{
+    width: 100%;
+    transition: width 0.3s;
+
+}
+.nav__links li a:hover{
+    color: var(--font-color-dark);
+    cursor: pointer;
+}
+
+button {
+    padding: 0.362em 1.5em;
+    background-image: linear-gradient(90deg,#00B9FF, #92e2ff, #92e2ff , #00B9FF);
+    border: 1.5px solid;
+    border-radius: 3.125em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out 0.2s;
+    background-size: 200%;
+    background-position: left;
+    color: var(--font-color-dark);
+
+}
+
+button:hover{
+    background-position: right;
+    letter-spacing: 0.25px;
+}
+
+
+/* ======================NAVBAR END=================== */
+
+
+
+
+
+
+
+

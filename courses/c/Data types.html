@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C | Data Types</title>
+</head>
+<body>
+        <h1>C Data Types</h1>
+        <p> Within the C programming language, data types ask for an in-depth system used for declaring variables or functions of various types. The type of a variable determines what proportion of space it occupies in storage and the way the bit pattern stored is interpreted.
+
+            The types in C are often classified as follows:
+            </p>
+
+        <table>
+
+            <tr>
+                <td><h2>S. No.</h2></td>
+                <td><h2>Types and Descriptions</h2></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>
+                    <h3>Basic Types</h3>
+                    <p>They are arithmetic types and contain two types: (a) integer types and (b) floating-point types.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>
+                    <h3>Enumerated types:       </h3>
+                    <p>They are again arithmetic types and that they are used to define variables that will only be assigned certain discrete integer values throughout the program.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>
+                    <h3>The type void:
+                    </h3>
+                    <p>The type specifier void indicates that no value is out there.
+                    </p>
+
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>
+                    <h3>Derived types:
+                    </h3>
+                    <p>They include (a) Pointer types, (b) Array types,  (c) Structure types, (d) Union types and (e) Function types. 
+                    </p>
+                </td>
+            </tr>
+
+            <p>The array types and structure types are referred to collectively as the aggregate types. The type of a function specifies the sort of the function's return value. We will see basic types within the following section, whereas, other types are going to be covered within the upcoming chapters.
+            </p>
+
+            <h2>Integer Types</h2>
+            <table>
+
+                <tr>
+                    <td><h3>Types</h3></td>
+                    <td><h3>Storage</h3></td>
+                    <td><h3>Value Range</h3></td>
+                </tr>
+                <tr>
+                    <td>char</td>
+                    <td>1 Byte</td>
+                    <td>-128 to 127 or 0 to 255</td>
+                </tr>
+                <tr>
+                    <td>unsigned char</td>
+                    <td>1 Byte</td>
+                    <td>0 to 255</td>
+                </tr>
+                <tr>
+                    <td>signed char</td>
+                    <td>1 Byte</td>
+                    <td>-128 to 127</td>
+                </tr>
+                <tr>
+                    <td>int</td>
+                    <td>2 or 4 Bytes</td>
+                    <td>
+                        -32,768 to 32,767
+                        
+                        </td>
+                </tr>
+                <tr>
+                    <td>unsigned int</td>
+                    <td>2 or 4 Bytes</td>
+                    <td>0 to 65,535</td>
+                </tr>
+                <tr>
+                    <td>short</td>
+                    <td>2 Bytes</td>
+                    <td>-32,768 to 32,767</td>
+                </tr>
+                <tr>
+                    <td>short</td>
+                    <td>2 Bytes</td>
+                    <td>
+                        -32,768 to 32,767
+                        
+                        </td>
+                </tr>
+                <tr>
+                    <td>unsigned short</td>
+                    <td> 2 Bytes</td>
+                    <td>
+                        0 to 65,535
+                        
+                        </td>
+                </tr>
+                <tr>
+                    <td>long</td>
+                    <td>4 Bytes</td>
+                    <td>
+                        -2,147,483 to 2,147,483,6
+                        
+                        </td>
+                </tr>
+                <tr>
+                    <td>unsigned long</td>
+                    <td>4 Bytes</td>
+                    <td>0 to 4,294,967,295</td>
+                </tr>
+
+
+            </table>
+
+        </table>
+
+    <p>To get the precise size of a kind or a variable on a specific platform, you'll use the sizeof operator. The expression sizeof(type) yields the storage size of the thing or type in bytes. Following is an example to urge the dimensions of int type on any machine:
+    </p>
+
+    <p id="code">
+        #include<stdio.h>
+        #include<limits.h>
+        
+        int main()
+          {
+              printf("Storage size for int : %d \n", sizeof(int));  
+              return 0;                                
+        } 
+        
+        </p>
+    <h2>floating-point Types</h2>
+    <p>The following table gives you details about standard floating-point types with storage sizes and value ranges and their precision:
+        The header file float.h defines macros that allow you to use these values and other details about the binary representation of real numbers in your programs. The following example will print space for storing taken by a float type and its range values:
+        </p>
+
+    <p id="code">
+        #include<stdio.h>
+        #include<float.h>
+        
+        int main()
+        {
+            printf("Storage size for float : %d \n", sizeof(float)); 
+            printf("Minimum float positive value: %E\n", FLT_MIN );  
+            printf("Maximum float positive value: %E\n", FLT_MAX );  
+            printf("Precision value: %d\n", FLT_DIG );
+               
+            return 0;
+        } 
+        
+        </p>
+    <h2>The Void Types</h2>
+    <p>The void type specifies that no value is out there. It's utilized in three sorts of situations.
+    </p>
+
+    <table>
+        <tr>
+            <td><h3>S. No.</h3></td>
+            <td><h3>Types and Descriptions</h3></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>
+                <h3>Function return as void</h3>
+                <p>There are various functions in C which don’t return value otherwise you can say they return void. A function with no return value has the return type as void. For instance, void exit (int status);
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>
+                <h3>Function arguments as void
+                </h3>
+                <p>There are various functions in C which do not accept any parameter. A function with no parameter can accept as a void. For example, int rand(void);
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>
+                <h3>Pointer to void</h3>
+                <p>A pointer of type void * represents the address of an object, but not its type. For example, a memory allocation function void *malloc( size_t size ); returns a pointer to void which may be cast to any data type. 
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <div class="questions">
+        <h2>Quiz Time</h2>
+
+        <h2>
+            1. Which of the following are not derived data types?
+
+        </h2>
+
+        <button class="ans">Pointers</button>
+        <button class="ans">Arrays</button>
+        <button class="ans">Integres</button>
+        <button class="ans">Unions</button>
+        
+        <h2>
+            2. Which is/are the correct entry(ies) for Integer types?    
+        </h2>
+        <button class="ans">A-Z</button>
+        <button class="ans">a-z</button>
+        <button class="ans">0-9</button>
+        <button class="ans">@,!,#,$</button>
+
+        <h2>
+            3. Correct header file for using floating values is?    
+        </h2>
+        <button class="ans">stdio.h</button>
+        <button class="ans">int.h</button>
+        <button class="ans">float.h</button>
+        <button class="ans">maths.h</button>
+        
+        <h2>
+            4. The storage space occupied by a Long integer type is?
+
+        </h2>
+        <button class="ans">1 Byte</button>
+        <button class="ans">2 Bytes</button>
+        <button class="ans">3 Bytes</button>
+        <button class="ans">4 Bytes</button>
+
+        <h2>
+            5. Which o fte following is a floating-point type value?    
+        </h2>
+        <button class="ans">0.5757</button>
+        <button class="ans">244</button>
+        <button class="ans">variable_name</button>
+        <button class="ans">float.h</button>
+
+
+    </div>
+    
+
+
+
+</body>
+</html>
