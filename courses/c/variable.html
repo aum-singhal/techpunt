@@ -8,8 +8,193 @@
 </head>
 <body>
     
-    <!-- ================== Main Div ================= -->
-    .main>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C | Variables</title>
+</head>
+<body>
+    
+    <h1>C Variables</h1>
+    <p>A variable is nothing but a reputation given to a cargo area that our programs can manipulate. Each variable in C features a specific type, which determines the dimensions and layout of the variable's memory; the range of values that will be stored within that memory; and therefore the set of operations that will be applied to the variable.
+
+        The name of a variable is often composed of letters, digits, and therefore the underscore character. It must begin with either a letter or an underscore. Upper and lowercase letters are distinct because C is case-sensitive. supported the essential types explained within the previous chapter, there'll be the subsequent basic variable types: 
+    </p>
+    
+    <table>
+        <tr>
+            <td><h3>Type</h3></td>
+            <td><h3>Description</h3></td>
+        </tr>
+        <tr>
+            <td>char</td>
+            <td>Typically a single octet(one byte). This is an integer type.</td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>The most natural size of integer for the machine</td>
+        </tr>
+        <tr>
+            <td>float</td>
+            <td>A single-precision floating point value.</td>
+        </tr>
+        <tr>
+            <td>double</td>
+            <td>A double-precision floating point value.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>Represents the absence of type</td>
+        </tr>
+    </table>
+
+    <p>C programing language also allows defining various other sorts of variables, which we'll cover in subsequent chapters like Enumeration, Pointer, Array, Structure, Union, etc. For this chapter, allow us to study only basic variable types.
+    </p>
+
+    <h2>Variable Definition in C:</h2>
+    <p>A variable definition means to inform the compiler where and how much to make the storage for the variable. A variable definition specifies a knowledge type and contains an inventory of 1 or more variables of that type as follows:</p>
+    <p id="code">type variable_list;</p>
+
+    <p>Here, the sort must be a legitimate C data type including char, w_char, int, float, double, bool or any user-defined object, etc., and variable_list may contain one or more identifier names separated by commas. Some valid declarations are shown here:
+    </p>
+
+    <p id="code">
+        int          i, j, k; 
+        char       c, ch; 
+        float       f, salary; 
+        double   d;
+    </p>
+
+    <p>The line int i, j, k; both declares and defines the variables i, j and k; which instructs the compiler to make variables named i, j and k of type int.
+        Variables are often initialized (assigned an initial value) in their declaration. The initializer consists of an equal sign followed by a continuing expression as follows:
+    </p>
+
+    <p id="code">type variable_name = value;</p>
+
+    <h2>Variable declaration in C:</h2>
+    <p>A variable declaration provides assurance to the compiler that there's one variable existing with the given type and name in order that the compiler proceeds with further compilation without having complete detail about the variable. A variable declaration has its meaning at the time of compilation only, compiler needs actual variable declaration at the time of linking of the program.
+        A variable declaration is beneficial once you are using multiple files and you define your variable in one among the files, which can be available at the time of linking the program. you'll use the extern keyword to declare a variable anywhere. Though you'll declare a variable multiple times in your C program it is often defined as just one occasion during a file, a function, or a block of code.
+    </p>
+
+    <h3>
+        There are two sorts of expressions in C:
+    </h3>
+    <ol>
+        <li>
+            <h4>lvalue:</h4>
+            <p>An expression that's an lvalue may appear as either the left-hand or right-hand side of an assignment.</p>
+        </li>
+        <li>
+            <h4>rvalue:</h4>
+            <p>An expression that's an rvalue may appear on the right- but not the left-hand side of an assignment.
+            </p>
+        </li>
+    </ol>
+
+    <p>Variables are lvalues then may appear on the left-hand side of an assignment. Numeric literals are rvalues then might not be assigned and can't appear on the left-hand side. Following may be a valid statement:
+    </p>
+
+    <p id="code">int g = 20;</p>
+
+    <p>But the following isn't a legitimate statement and would generate a compile-time error:
+    </p>
+    <p id="cod">10 = 20;</p>
+
+    <div class="questions">
+
+        <h2>Quiz Time</h2>
+
+        <h3>
+            1. Choose teh correct Syntax for declaring variable
+        </h3>
+        <button class="ans">int a;b;c</button>
+        <button class="ans">int a, b, c;</button>
+        <button class="ans">int = a, b, c;</button>
+        <button class="ans">int : a, b, c;</button>
+
+        <h3>
+           2. The following block of code had a runtime error. Choose the appropriate corrections :
+        </h3>
+        <p>
+            {
+                int a, b, c;
+                a,b=10, c=20;
+            }
+        </p>
+        <button class="ans">a,b=10; c=20;</button>
+        <button class="ans">a=10,b=10,c=20;</button>
+        <button class="ans">int a=10,b=10,c=20;</button>
+        <button class="ans">No Correction needed</button>
+
+        <h3>
+            3. Read the following and choose the appropriate option:
+        </h3>
+        <p>
+            printf() function is used to print the enclosed value to the user.
+	        Eg. : { printf(“Hello world”);}
+		     Output : Hello World 
+            Based on the above example choose the correct output :
+            {
+                int a,b,c=10;
+                int d=(a*b)+c ;
+                printf(d);
+            }
+
+        </p>
+        <button class="ans">Output=30</button>
+        <button class="ans">Output=110</button>
+        <button class="ans">Output=200</button>
+        <button class="ans">Output=1000</button>
+
+        <h3>
+            4. Match the following with their correct descriptions
+        </h3>
+       <table>
+           <tr>
+               <td><button class="ans">int</button></td>
+               <td><button class="ans">Represents teh absence of type</button></td>
+           </tr>
+           <tr>
+               <td><button class="ans">Double</button></td>
+               <td><button class="ans">Size of integers for the machine</button></td>
+           </tr>
+           <tr>
+               <td><button class="ans">Void</button></td>
+               <td><button class="ans">Floating point values with double double-precision</button></td>
+           </tr>
+       </table>
+
+        <h3>
+            5. What will be the output of the C program?
+        </h3>
+        <p>
+            #include<stdio.h>
+                int main()
+                {
+                    int class;
+                    int public = 5;
+                    int private = 10;
+                    int protected = 15;
+                    class = public + private + protected;
+                    printf("%d",class);
+                    return 0;
+                }
+                
+        </p>
+        <button class="ans">Garbage value</button>
+        <button class="ans">Compilation time error</button>
+        <button class="ans">Runtime Error</button>
+        <button class="ans">30</button>
+
+
+
+    </div>
+
+</body>
+</html>
 
 
 </body>
