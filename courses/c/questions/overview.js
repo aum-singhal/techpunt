@@ -28,15 +28,15 @@ let questions = [
         answer: 3,
     },
     {
-        question: "Why is C language used in making operating systems?",
-        choice1: "High-level language",
-        choice2: "Large Standard Library",
-        choice3: "Object-Oriented",
-        choice4: "Structured language",
-        answer: 4,
+        question: "C is a which level language?",
+        choice1: "Low Level",
+        choice2: "High Level",
+        choice3: "both a & b",
+        choice4: "None of these",
+        answer: 1,
     },
     {
-        question: "Why is C language used in making operating systems?",
+        question: "Which features enable C suitable for making operating systems?",
         choice1: "High-level language",
         choice2: "Large Standard Library",
         choice3: "Object-Oriented",
@@ -45,8 +45,9 @@ let questions = [
     },
 ]
 
-const scorePoints = 40
+const scorePoints = 10
 const maxQuestions = 4
+const totalScore = scorePoints * maxQuestions
 
 startGame = () => {
     questionCounter = 0

@@ -5,6 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course | C Programming</title>
+
+    <!-- =================== Css Style =================== -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #052C4E;
+        }
+        .game{
+            padding: 50px 100px;
+            border-radius: 13px;
+            border: 1px groove #021729;
+            box-shadow: 0 0 10px 3px #021729;
+            background-color: #052C4E;
+            display: flex;
+            flex-direction: column;
+        }
+        .hud{
+            display: flex;
+            justify-content: space-between;
+        }
+        .progressBar{
+            height: 24px;
+            width: 110px;
+            border: 3px solid greenyellow;
+            border-radius: 24px;
+            padding: 0;
+            margin: 5px 0;
+        }
+        #progressBarFull{
+            margin: 0;
+            height: 100%;
+            background-color: greenyellow;
+            width: auto;
+        }
+        .choice-container{
+            display: flex;
+            background-color: blue;
+            margin: 6px 0;
+            padding: 0 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: 0.25s;
+        }
+        .choice-container:hover{
+            transform: scale(1.03);
+        }
+        .correct{
+            background-color: greenyellow !important;
+            color: black !important;
+        }
+        .incorrect{
+            background-color: red !important;
+        }
+        .choice-text{
+            width: 100%;
+            height: 100%;
+            padding: 15px 0;
+        }
+        .choice-prefix{
+            padding: 15px 0;
+        }
+    </style>
+
 </head>
 <body>
     
@@ -22,7 +98,7 @@
 
                 <div class="hud-item">
                     <p class="hud-prefix">Score</p>
-                    <h1 class="hud-main-text" id="score"></h1>
+                    <h1 class="hud-main-text" id="score">0</h1>
                 </div>
 
             </div>
@@ -30,22 +106,22 @@
             <h1 id="question">question</h1>
 
             <div class="choice-container">
-                <p class="choice-prefix">A</p>
+                <p class="choice-prefix">A</p> &nbsp;&nbsp;&nbsp;
                 <p class="choice-text" data-number="1"></p>
             </div>
 
             <div class="choice-container">
-                <p class="choice-prefix">B</p>
+                <p class="choice-prefix">B</p> &nbsp;&nbsp;&nbsp;
                 <p class="choice-text" data-number="2"></p>
             </div>
 
             <div class="choice-container">
-                <p class="choice-prefix">C</p>
+                <p class="choice-prefix">C</p>&nbsp;&nbsp;&nbsp;
                 <p class="choice-text" data-number="3"></p>
             </div>
 
             <div class="choice-container">
-                <p class="choice-prefix">D</p>
+                <p class="choice-prefix">D</p>&nbsp;&nbsp;&nbsp;
                 <p class="choice-text" data-number="4"></p>
             </div>
         </div>
