@@ -16,41 +16,49 @@ let availableQuestions = []
 
 let questions = [
     {
-        question: "Why is C language used in making operating systems?",
-        choice1: "High-level language",
-        choice2: "Large Standard Library",
-        choice3: "Object-Oriented",
-        choice4: "Structured language",
-        answer: 4,
+        question: "Which of the following are not derived data types?",
+        choice1: "Unions",
+        choice2: "Integres",
+        choice3: "Arrays",
+        choice4: "Pointers",
+        answer: 2,
     },
     {
-        question: "Who is the father of the C Programming Language?",
-        choice1: "Bjarne Stroustrup",
-        choice2: "James A. Gosling",
-        choice3: "Dennis Ritchie",
-        choice4: "Dr. E.F. Cod",
-        answer: 3,
-    },
-    {
-        question: "C is a which level language?",
-        choice1: "Low Level",
-        choice2: "High Level",
-        choice3: "both a & b",
-        choice4: "None of these",
+        question: "Which is/are the correct entry(ies) for Integer types?",
+        choice1: "@,!,#,$",
+        choice2: "0-9",
+        choice3: "a-z",
+        choice4: "A-Z",
         answer: 1,
     },
     {
-        question: "Which features enable C suitable for making operating systems?",
-        choice1: "High-level language",
-        choice2: "Large Standard Library",
-        choice3: "Object-Oriented",
-        choice4: "Structured language",
+        question: "Correct header file for using floating values is?",
+        choice1: "maths.h",
+        choice2: "float.h",
+        choice3: "int.h",
+        choice4: "stdio.h",
+        answer: 1,
+    },
+    {
+        question: "The storage space occupied by a Long integer type is?",
+        choice1: "1 Byte",
+        choice2: "2 Bytes",
+        choice3: "3 Bytes",
+        choice4: "4 Bytes",
         answer: 4,
     },
+    {
+        question: "Which of the following is a floating-point type value?",
+        choice1: "0.5757",
+        choice2: "244",
+        choice3: "variable_name",
+        choice4: "float.h",
+        answer: 4,
+    }
 ]
 
 const scorePoints = 10
-const maxQuestions = 4
+const maxQuestions = 5
 const totalScore = scorePoints * maxQuestions
 
 startGame = () => {
