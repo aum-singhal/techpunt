@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C | Constants and Litterals</title>
+</head>
+<body>
+    
+    <h1>Constants and Litterals</h1>
+    <p>The constants ask fixed values that the program might not alter during its execution. These fixed values also are called literals.
+        Constants are often of any of the essential data types like an integer constant, a floating constant, a personality constant, or a string literal. There also are enumeration constants also.
+        The constants are treated a bit like regular variables except that their values can't be modified after their definition.
+    </p>
+
+    <h2>Integer literals
+    </h2>
+    <p>An integer literal is often a decimal, octal, or hexadecimal constant. A prefix specifies the bottom or radix: 0x or 0X for hexadecimal, 0 for octal, and zip for decimal.
+        An integer literal also can have a suffix that's a mixture of U and L, for unsigned and long,
+        respectively. The suffix can be uppercase or lowercase and can be in any order.
+        
+        Here are some examples of integer literals:
+    </p>
+
+    <p id="code">212         /* Legal */ 
+        215u       /* Legal */ 
+        0xFeeL   /* Legal */
+        078         /* Illegal: 8 is not an octal digit */
+        032UU    /* Illegal: cannot repeat a suffix */
+    </p>
+
+    <p>Following are other examples of various types of Integer literals:</p>
+    <p id="code">85         /* decimal */
+        0213     /* octal */
+        0x4b     /* hexadecimal */
+        30         /* int */
+        30u       /* unsigned int */
+        30l        /* long */
+        30ul      /* unsigned long *
+        </p>
+
+    <h2>Floating-point literals    </h2>
+    <p>A floating-point literal has an integer part, a percentage point, a fractional part, and a lover part. you'll represent floating point literals either in decimal form or exponential form.
+        While representing using the decimal form, you want to include the percentage point, the exponent, or both and while representing using the exponential form, you want to include the integer part, the fractional part, or both. The signed exponent is introduced by e or E.
+    </p>
+
+    <p>Here are some samples of floating-point literals:
+    </p>
+
+    <table>
+        <tr>
+            <td>3.14159</td>
+            <td>/* Leagal */</td>
+        </tr>
+        <tr>
+            <td>314524E-5L</td>
+            <td>/* Leagal */</td>
+        </tr>
+        <tr>
+            <td>510E</td>
+            <td>/* Illegal Incomplete exponent */</td>
+        </tr>
+        <tr>
+            <td>210f</td>
+            <td>/* Illegal no decimal or exponent */</td>
+        </tr>
+        <tr>
+            <td> -55</td>
+            <td>/* Illegal missing integer or fraction</td>
+        </tr>
+    </table>
+
+    <h2>Character constants</h2>
+    <p>Character literals are enclosed in single quotes, e.g., 'x', and may be stored during a simple variable of char type.
+        A character literal are often a clear character (e.g., 'x'), an escape sequence (e.g., '\t'), or a universal character (e.g., 'ˀ').
+        There are certain characters in C once they are preceded by a backslash they're going to have special meaning and that they are wont to represent like newline (\n) or tab (\t). Here, you've got an inventory of a number of such escape sequence codes:
+    </p>
+
+    <table>
+        <tr>
+            <tr><h3>Escape Sequences</h3></tr>
+            <tr><h3>Meaning</h3></tr>
+        </tr>
+        <tr>
+            <tr>\\</tr>
+            <tr>\ character</tr>
+        </tr>
+        <tr>
+            <tr>\'</tr>
+            <tr>' character</tr>
+        </tr>
+        <tr>
+            <tr>\''</tr>
+            <tr>'' character</tr>
+        </tr>
+        <tr>
+            <tr>\?</tr>
+            <tr>? character/tr>
+        </tr>
+        <tr>
+            <tr>\a</tr>
+            <tr>Alert and Bell</tr>
+        </tr>
+        <tr>
+            <tr>\b</tr>
+            <tr>Backspace</tr>
+        </tr>
+        <tr>
+            <tr>\f</tr>
+            <tr>Form Feed</tr>
+        </tr>
+        <tr>
+            <tr>\n</tr>
+            <tr>Newline</tr>
+        </tr>
+        <tr>
+            <tr>\r</tr>
+            <tr>Carriage return</tr>
+        </tr>
+        <tr>
+            <tr>\t</tr>
+            <tr>Horizontal Tab</tr>
+        </tr>
+        <tr>
+            <tr>\v</tr>
+            <tr>Vertical Tab</tr>
+        </tr>
+        <tr>
+            <tr>\ooo</tr>
+            <tr>Ocatl number of one to three digits</tr>
+        </tr>
+    </table>
+
+
+    <p>Following is the example to show few escape sequence characters:
+    </p>
+
+    <p id="code">#include<stdio.h>
+        int main()
+        {
+             printf("Hello\tWorld\n\n");
+             return 0;
+        }
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <p id="code">Hello World</p>
+
+    <h2>String literals</h2>
+    <p>String literals or constants are enclosed in double-quotes "". A string contains characters that are similar to character literals: plain characters, escape sequences, and universal characters.
+
+        You can break a long line into multiple lines using string literals and separating them using whitespaces.
+        Here are some examples of string literals. All three forms are identical strings. 
+    </p>
+
+    <p id="code">"hello, dear"
+        "hello, \
+        dear"
+        "hello, " "d" "ear"
+    </p>
+
+    <h2>Defining Constants</h2>
+    <p>There are two simple ways in C to define consatants:</p>
+
+    <ol>
+        <li>Using #define preprocessor</li>
+        <li>Using const keyword</li>
+    </ol>
+
+    <h3>The #define preprocessor</h3>
+    <p>Following is the form to use #define preprocessor to define a constant:    </p>
+
+    <p id="code">
+        #include <stdio.h>
+        #define LENGTH 10
+        #define WIDTH 5
+        #define NEWLINE '\n'
+
+        int main()
+        {
+            int area;
+
+            area = LENGTH + WIDTH
+            printf("value of the area : %d", area);
+            printf("%c", NEWLINE);
+
+            return 0;
+        }
+    </p>
+
+    <p>When the above code is compiled and executed, it will produce the following result:</p>
+    <p id="code">
+        value of area: 50
+    </p>
+
+    <h3>The const keyword</h3>
+    <p>You can use the const prefix to declare constants with a specific type as follows:</p>
+
+    <p id="code">const type variable = value;</p>
+
+    <p>The following example explains it in detail:</p>
+    <p id="code">
+        #include <stdio.h>
+                
+        int main()
+        {
+            const int LENGTH 10
+            const int WIDTH 5
+            const char NEWLINE '\n'
+
+            int area;
+
+            area = LENGTH + WIDTH
+            printf("value of the area : %d", area);
+            printf("%c", NEWLINE);
+
+            return 0;
+        }
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:</p>
+    <p id="code">value of the area: 50</p>
+
+    <p>Note that it is a good programming practice to define constants in CAPITALS.
+    </p>
+
+
+</body>
+</html>
