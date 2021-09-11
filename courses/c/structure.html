@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C | Program Structure</title>
+</head>
+<body>
+
+    <h1>C Program Structure    </h1>
+    <p>Tradition dictates that we start with a really simple program, which simply displays the characters “Hello, World!” on the screen and immediately exits.
+        Let us check out an easy code that might print the words "Hello World":
+    </p>
+
+    <p id="code">
+        #include int main()
+        {
+        /* my first program in C */
+            printf("Hello, World! \n");
+            return 0;
+        }
+
+    </p>
+
+    <p>Let us check out various parts of the above program:    </p>
+
+    <ol>
+        <li>The primary line of the program #include may be a preprocessor command, which tells a C compiler to incorporate stdio.h file before getting to actual compilation.</li>
+        <li>subsequent line int main() is that the main function where program execution begins.</li>
+        <li>The next line /*...*/ will be ignored by the compiler and it has been put to add additional comments in the program. So such lines are called comments within the program.</li>
+        <li>subsequent line printf(...) is another function available in C which causes the message "Hello, World!" to be displayed on the screen.</li>
+        <li>The next line return 0; terminates main()function and returns the value 0. </li>
+    </ol>
+
+
+
+</body>
+</html>
