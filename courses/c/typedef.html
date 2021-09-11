@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C | TypeDef</title>
+</head>
+<body>
+
+    <h1>TypeDef</h1>
+    <p>The C programming language provides a keyword called typedef, which you can use to give a type a new name. Following is an example to define the term BYTE for one-byte numbers:    </p>
+    
+    <p id="code">typedef unsigned char BYTE;</p>
+
+    <p>After this type definitions, the identifier BYTE can be used as an abbreviation for the type unsigned char, for example:
+    </p>
+
+    <p id="code">BYTE  b1, b2;</p>
+
+    <p>By convention, uppercase letters are used for these definitions to remind the user that the type name is really a symbolic abbreviation, but you can use lowercase, as follows:
+    </p>
+
+    <p id="code">typedef unsigned char byte;</p>
+    <p>
+        You can use typedef to give a name to user-defined data type as well. For example, you can use typedef with the structure to define a new data type and then use that data type to define structure variables directly as follows:
+    </p>
+
+    <p id="code">#include <stdio.h> #include <string.h>
+ 
+        typedef struct Books
+        {
+        char  title[50]; char  author[50]; char  subject[100]; int   book_id;
+        } Book;
+         
+        int main( )
+        {
+        Book book;
+         
+        strcpy( book.title, "C Programming"); 
+        strcpy( book.author, "Nuha Ali");
+        strcpy( book.subject, "C Programming Tutorial");
+        
+        
+        
+        book.book_id = 6495407;
+         
+        printf( "Book title : %s\n", book.title); 
+        printf( "Book author : %s\n", book.author); 
+        printf( "Book subject : %s\n", book.subject); 
+        printf( "Book book_id : %d\n", book.book_id);
+         
+        return 0;
+        }
+        
+    </p>
+    <p>When the above code is compiled and executed, it produces the following result:</p>
+
+    <p id="code">
+        Book  title : C Programming Book  author : Nuha Ali
+        Book  subject : C Programming Tutorial
+        Book  book_id : 6495407
+
+    </p>
+
+    <h2>typedef vs #define</h2>
+
+    <p>The #define is a C-directive which is also used to define the aliases for various data types similar to typedef but with three differences:    </p>
+
+    <ol>    
+        <li>The typedef is limited to giving symbolic names to types only where as #define can be used to define alias for values as well, like you can define 1 as ONE etc.</li>
+        <li>The typedef interpretation is performed by the compiler where as #define statements are processed by the pre-processor.    </li>
+    </ol>
+
+    <p>Following is a simplest usage of #define:</p>
+
+    <p id="code">
+        #include <stdio.h>
+ 
+        #define TRUE  1
+        #define FALSE 0
+            
+        int main( )
+        {
+        printf( "Value of TRUE : %d\n", TRUE); printf( "Value of FALSE : %d\n", FALSE);
+            
+        return 0;
+        }
+        
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:    </p>
+
+    <p id="code">
+        Value of TRUE : 1
+        Value of FALSE : 0
+
+    </p>
+
+
+</body>
+</html>
