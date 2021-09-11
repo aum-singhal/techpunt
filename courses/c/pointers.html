@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C | Pointers</title>
+</head>
+<body>
+    
+    <h1>C Pointers</h1>
+    <p>
+        Pointers in C are easy and fun to learn. Some C programming tasks are performed more easily with pointers, and other tasks, such as dynamic memory allocation, cannot be performed without using pointers. So it becomes necessary to learn pointers to become a perfect C programmer. Let's start learning them in simple and easy steps.
+ 
+        As you know, every variable is a memory location and every memory location has its address defined which can be accessed using the ampersand (&) operator, which denotes an address in memory. Consider the following example, which prints the address of the variables defined:
+
+    </p>
+
+    <p id="code">
+        #include <stdio.h> 
+        int main () {
+            
+        int  var1;
+        char var2[10];
+        
+        printf("Address of var1 variable: %x\n", &var1  );
+        printf("Address of var2 variable: %x\n", &var2  );
+        
+        return 0;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <p id="code">
+        Address of var1 variable: bff5a400
+        Address of var2 variable: bff5a3f6
+
+    </p>
+
+    <h2>
+        What are Pointers?
+    </h2>
+
+    <p>A pointer is a variable whose value is the address of another variable, i.e., the direct address of the memory location. Like any variable or constant, you must declare a pointer before using it to store any variable address. The general form of a pointer variable declaration is:
+    </p>
+
+    <p id="code">type *var-name;</p>
+    <p>Here, type is the pointer's base type; it must be a valid C data type and var-name is the name of the pointer variable. The asterisk * used to declare a pointer is the same asterisk used for multiplication. However, in this statement, the asterisk is being used to designate a variable as a pointer. Take a look at some of the valid pointer declarations:</p>
+
+    <p id="code">
+        int	*ip;    /* pointer to an integer */
+        double *dp;	/* pointer to a double */
+        float  *fp;    /* pointer to a float */
+        char   *ch     /* pointer to a character */
+
+    </p>
+
+    <p>The actual data type of the value of all pointers, whether integer, float, character or otherwise, is the same, a long hexadecimal number that represents a memory address. The only difference between pointers of different data types is the data type of the variable or constant that the pointer points to.</p>
+    <h2>How to use pointers</h2>
+
+    <p>There are a few important operations, which we will do with the help of pointers very frequently. (a) We define a pointer variable, (b) assign the address of a variable to a pointer, and (c) finally access the value at the address available in the pointer variable. This is done by using the unary operator * that returns the value of the variable located at the address specified by its operand. The following example makes use of these operations:
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+        int main () {
+        int  var = 20;   /* actual variable declaration */
+        int  *ip;    	/* pointer variable declaration */
+        
+        ip = &var;  /* store address of var in pointer variable*/
+        
+        printf("Address of var variable: %x\n", &var  );
+        
+        /* address stored in pointer variable */
+        printf("Address stored in ip variable: %x\n", ip );
+        
+        /* access the value using the pointer */
+        printf("Value of *ip variable: %d\n", *ip );
+        
+        return 0;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <p id="code">
+        Address of var variable: bffd8b3c
+        Address stored in ip variable: bffd8b3c
+        Value of *ip variable: 20
+    </p>
+
+    <h2>NULL Pointers</h2>
+
+    <p>
+        It is always a good practice to assign a NULL value to a pointer variable in case you do not have an exact address to be assigned. This is done at the time of variable declaration. A pointer that is assigned NULL is called a null pointer.
+        The NULL pointer is a constant with a value of zero defined in several standard libraries. Consider the following program:
+
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+        int main () {
+            
+        int  *ptr = NULL;
+        
+        printf("The value of ptr is : %x\n", ptr  );
+        
+        return 0;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <p id="code">The value of ptr is 0</p>
+
+    <table>
+        <tr>
+            <td><h3>S. No.</h3></td>
+            <td>
+                <h3>Concepts & Descriptions</h3>
+            
+            </td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>
+                <h3>Pointers</h3>
+                <p>There are four arithmetic operators that can be used in pointers: ++, --, +, -
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>
+                <h3>Array of Pointers</h3>
+                <p>You can define arrays to hold a number of pointers.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>
+                <h3>Pointer to pointer</h3>
+                <p>C allows you to have a pointer on a pointer and so on.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>
+                <h3>Passing pointers to functions in C</h3>
+                <p>Passing an argument by reference or by address enables the passed argument to be changed in the calling function by the called function.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>
+                <h3>Return pointer from functions in C</h3>
+                <p>C allows a function to return a pointer to the local variable, static variable and dynamically allocated memory as well.</p>
+            </td>
+        </tr>
+    </table>
+
+    <p>In most the operating systems, programs are not permitted to access memory at address 0 because that memory is reserved by the operating system. However, the memory address 0 has special significance; it signals that the pointer is not intended to point to an accessible memory location. But by convention, if a pointer contains the null (zero) value, it is assumed to point to nothing.
+        To check for a null pointer, you can use an 'if' statement as follows:
+    </p>
+
+    <p id="code">
+        if(ptr) 	/* succeeds if p is not null */
+        if(!ptr)	/* succeeds if p is null */
+    </p>
+
+    <h2>Pointer arithmetic</h2>
+    <p>
+        As explained in main chapter, C pointer is an address, which is a numeric value. Therefore, you can perform arithmetic operations on a pointer just as you can a numeric value. There are four arithmetic operators that can be used on pointers: ++, --, +, and -
+
+        To understand pointer arithmetic, let us consider that ptr is an integer pointer which points to the address 1000. Assuming 32-bit integers, let us perform the following arithmetic operation on the pointer:
+
+    </p>
+
+    <p id="code">ptr++</p>
+
+    <p>Now, after the above operation, the ptr will point to the location 1004 because each time ptr is incremented, it will point to the next integer location which is 4 bytes next to the current location. This operation will move the pointer to the next memory location without impacting the actual value at the memory location. If ptr points to a character whose address is 1000, then the above operation will point to location 1001 because the next character will be available at 1001.</p>
+
+    <h2>Incrementing a Pointer</h2>
+
+    <p>We prefer using a pointer in our program instead of an array because the variable pointer can be incremented, unlike the array name which cannot be incremented because it is a constant pointer. The following program increments the variable pointer to access each succeeding element of the array:
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+        const int MAX = 3; int main ()
+        {
+        int  var[] = {10, 100, 200};
+        int  i, *ptr;
+            
+        /* let us have array address in pointer */ ptr = var;
+        for ( i = 0; i < MAX; i++)
+        {
+            
+        printf("Address of var[%d] = %x\n", i, ptr ); printf("Value of var[%d] = %d\n", i, *ptr );
+            
+        /* move to the next location */ ptr++;
+        }
+        return 0;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces result something as follows:</p>
+
+    <p id="code">
+        Address of var[0] = bf882b30 
+        Value of var[0] = 10
+        Address of var[1] = bf882b34 
+        Value of var[1] = 100 
+        Address of var[2] = bf882b38
+        Value of var[2] = 200
+    </p>
+
+    <h2>Decrementing a Pointer
+    </h2>
+
+    <p>The same considerations apply to decrementing a pointer, which decreases its value by the number of bytes of its data type as shown below:</p>
+
+    <p id="code">
+        #include <stdio.h>
+        const int MAX = 3; int main ()
+        {
+        int  var[] = {10, 100, 200};
+        int  i, *ptr;
+            
+        /* let us have array address in pointer */ ptr = &var[MAX-1];
+        for ( i = MAX; i > 0; i--)
+        {
+            
+        printf("Address of var[%d] = %x\n", i, ptr ); printf("Value of var[%d] = %d\n", i, *ptr );
+            
+        /* move to the previous location */ ptr--;
+        }
+        return 0;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces result something as follows:
+
+    </p>
+
+    <p id="code">
+        Address of var[3] = bfedbcd8 
+        Value of var[3] = 200 
+        Address of var[2] = bfedbcd4 
+        Value of var[2] = 100 
+        Address of var[1] = bfedbcd0
+        Value of var[1] = 10
+
+    </p>
+
+    <h2>Pointer Comparisons
+    </h2>
+
+    <p>
+        Pointers may be compared by using relational operators, such as ==, <, and >. If p1 and p2 point to variables that are related to each other, such as elements of the same array, then p1 and p2 can be meaningfully compared.
+
+        The following program modifies the previous example one by incrementing the variable pointer so long as the address to which it points is either less than or equal to the address of the last element of the array, which is &var[MAX - 1]:
+
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+        const int MAX = 3;
+            
+        int main ()
+        {
+        int  var[] = {10, 100, 200};
+        int  i, *ptr;
+            
+        /* let us have address of the first element in pointer */ ptr = var;
+        i = 0;
+        while ( ptr <= &var[MAX - 1] )
+        {
+            
+        printf("Address of var[%d] = %x\n", i, ptr ); printf("Value of var[%d] = %d\n", i, *ptr );
+            
+        /* point to the previous location */ ptr++;
+        i++;
+        }
+        return 0;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces result something as follows:
+    </p>
+
+    <p id="code">
+        Address of var[0] = bfdbcb20 
+        Value of var[0] = 10 
+        Address of var[1] = bfdbcb24 
+        Value of var[1] = 100 
+        Address of var[2] = bfdbcb28 
+        Value of var[2] = 200
+    </p>
+
+    <h2>Array of pointers</h2>
+
+    <p>Before we understand the concept of arrays of pointers, let us consider the following example, which makes use of an array of 3 integers:</p>
+
+    <p id="code">
+        #include <stdio.h> const int MAX = 3;
+        int main ()
+        {
+        int  var[] = {10, 100, 200};
+        int i;
+        for (i = 0; i < MAX; i++)
+        {
+        printf("Value of var[%d] = %d\n", i, var[i] );
+        }
+        return 0;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <p id="code">
+        Value of var[0] = 10 
+        Value of var[1] = 100
+        Value of var[2] = 200
+
+    </p>
+
+    <p>There may be a situation when we want to maintain an array, which can store pointers to an int or char or any other data type available. Following is the declaration of an array of pointers to an integer:</p>
+
+    <p id="code">
+        int *ptr[MAX];
+    </p>
+
+    <p>This declares ptr as an array of MAX integer pointers. Thus, each element in ptr, now holds a pointer to an int value. The following example makes use of three integers, which will be stored in an array of pointers as follows:</p>
+
+    <p id="code">
+        #include <stdio.h>
+        const int MAX = 3; int main ()
+        {
+        int  var[] = {10, 100, 200};
+        int i, *ptr[MAX];
+            
+        for ( i = 0; i < MAX; i++)
+        {
+        ptr[i] = &var[i]; /* assign the address of integer. */
+        }
+        for ( i = 0; i < MAX; i++)
+        {
+        printf("Value of var[%d] = %d\n", i, *ptr[i] );
+        }
+        return 0;
+        }
+        
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <p id="code">
+        Value of var[0] = 10    
+        Value of var[1] = 100
+        Value of var[2] = 200
+
+    </p>
+
+    <p>You can also use an array of pointers to character to store a list of strings as follows:</p>
+
+    <p id="code">
+        #include <stdio.h>
+        const int MAX = 4; int main ()
+        {
+        char *names[] = {
+        "Zara Ali", "Hina Ali", "Nuha Ali", "Sara Ali",
+        };
+        int i = 0;
+            
+        for ( i = 0; i < MAX; i++)
+        {
+        printf("Value of names[%d] = %s\n", i, names[i] );
+        }
+        return 0;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <p id="code">
+        Value of names[0] = Zara Ali 
+        Value of names[1] = Hina Ali 
+        Value of names[2] = Nuha Ali
+        Value of names[3] = Sara Ali
+    </p>
+
+    <h2>Pointer to Pointer</h2>
+    <p>A pointer to a pointer is a form of multiple indirections or a chain of pointers. Normally, a pointer contains the address of a variable. When we define a pointer to a pointer, the first pointer contains the address of the second pointer, which points to the location that contains the actual value as shown below.</p>
+    <img src="/assets/data/pointers dig.png" alt="represents how pointers work">    
+
+    <p>A variable that is a pointer to a pointer must be declared as such. This is done by placing an additional asterisk in front of its name. For example, the following is the declaration to declare a pointer to a pointer of type int:
+    </p>
+
+    <p id="code">int **var; </p>
+
+    <p>When a target value is indirectly pointed to by a pointer to a pointer, accessing that value requires that the asterisk operator be applied twice, as is shown below in the example:
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+ 
+        int main ()
+        {
+        int  var; int   *ptr; int 	**pptr;
+            
+        var = 3000;
+        /* take the address of var */ 
+        ptr = &var;
+            
+        /* take the address of ptr using address of operator & */ 
+        pptr = &ptr;
+            
+        /* take the value using pptr */ 
+        printf("Value of var = %d\n", var );
+        printf("Value available at *ptr = %d\n", *ptr ); 
+        printf("Value available at **pptr = %d\n", **pptr);
+        return 0;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <p id="code">
+        Value of var = 3000
+        Value available at *ptr = 3000 
+        Value available at **pptr = 3000
+
+    </p>
+
+    <h2>Passing pointers to functions</h2>
+
+    <p>A C programming language allows you to pass a pointer to a function. To do so, simply declare the function parameter as a pointer type.
+
+        Following a simple example where we pass an unsigned long pointer to a function and change the value inside the function which reflects back in the calling function:
+    </p>
+
+    <p id="code">
+        #include <stdio.h> #include <time.h>
+        void getSeconds(unsigned long *par); int main ()
+        {
+        unsigned long sec;
+            
+            
+        getSeconds( &sec );
+            
+        /* print the actual value */ printf("Number of seconds: %ld\n", sec );
+            
+        return 0;
+        }
+            
+        void getSeconds(unsigned long *par)
+        {
+        /* get the current number of seconds */
+        *par = time( NULL ); return;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <p id="code">Number of seconds :1294450468</p>
+
+    <p>The function, which can accept a pointer, can also accept an array as shown in the following example:</p>
+
+    <p id="code">
+        #include <stdio.h>
+ 
+        /* function declaration */
+        double getAverage(int *arr, int size);
+            
+        int main ()
+        {
+        /* an int array with 5 elements */
+        int balance[5] = {1000, 2, 3, 17, 50}; double avg;
+            
+        /* pass pointer to the array as an argument */ avg = getAverage( balance, 5 ) ;
+            
+        /* output the returned value  */ printf("Average value is: %f\n", avg );
+            
+        return 0;
+        }
+            
+        double getAverage(int *arr, int size)
+        {
+        int	i, sum = 0; double avg;
+            
+        for (i = 0; i < size; ++i)
+        {
+        sum += arr[i];
+        }
+        avg = (double)sum / size; return avg;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled together and executed, it produces the following result:
+    </p>
+
+    <p id="code">
+        Average value is: 214.40000
+    </p>
+
+    <h2>Return pointer from functions    </h2>
+    <p>As we have seen in the last chapter how C programming language allows returning an array from a function, similar way C allows you to return a pointer from a function. To do so, you would have to declare a function returning a pointer as in the following example:</p>
+
+    <p id="code">
+        int * myFunction()
+        {
+        .
+        .
+        .
+        }
+
+    </p>
+
+    <p>
+        The second point to remember is that it is not a good idea to return the address of a local variable outside of the function so you would have to define the local variable as a static variable.
+
+        Now, consider the following function, which will generate 10 random numbers and return them using an array name that represents a pointer, i.e., address of the first array element.
+
+    </p>
+
+    <p id="code">
+        #include <stdio.h> #include <time.h>
+ 
+            /* function to generate and retrun random numbers. */ 
+            int * getRandom( )
+            {
+            static int  r[10]; int i;
+             
+            /* set the seed */
+            srand( (unsigned)time( NULL ) ); for ( i = 0; i < 10; ++i)
+            {
+            r[i] = rand(); printf("%d\n", r[i] );
+            }
+             
+            return r;
+            }
+             
+            /* main function to call above defined function */ 
+            
+            int main ()
+            {
+            /* a pointer to an int */ 
+            int *p;
+            int i;
+             
+            p = getRandom();
+            for ( i = 0; i < 10; i++ )
+            {
+            printf("*(p + [%d]) : %d\n", i, *(p + i) );
+            }
+            return 0;
+            }
+            
+    </p>
+
+    <p>When the above code is compiled together and executed, it produces result something as follows:</p>
+    <p id="code">
+        1523198053
+        1187214107
+        1108300978
+        430494959
+        1421301276
+        930971084
+        123250484
+        106932140
+        1604461820
+        149169022
+        *(p + [0]) : 1523198053
+        *(p + [1]) : 1187214107
+        *(p + [2]) : 1108300978
+        *(p + [3]) : 430494959
+        *(p + [4]) : 1421301276
+        *(p + [5]) : 930971084
+        *(p + [6]) : 123250484
+        *(p + [7]) : 106932140
+        *(p + [8]) : 1604461820
+        *(p + [9]) : 149169022
+
+    </p>
+
+    
+
+
+
+</body>
+</html>
