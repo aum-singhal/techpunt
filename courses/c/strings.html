@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C | Strings</title>
+</head>
+<body>
+
+    <h1>Strings</h1>
+
+    <p>Strings are actually a one-dimensional array of characters terminated by a null character '\0'. Thus a null-terminated string contains the characters that comprise the string followed by a null.
+ 
+        The following declaration and initialization create a string consisting of the word "Hello". To hold the null character at the end of the array, the size of the character array containing the string is one more than the number of characters in the word "Hello."
+    </p>
+
+    <p id="code">char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};</p>
+
+    <p>If you follow the rule of array initialization then you can write the above statement as follows −</p>
+
+    <p id="code">char greeting[] = "Hello";</p>
+
+    <p>Following is the memory presentation of the above-defined string in C/C++ −
+        Actually, you do not place the null character at the end of a string constant. The C compiler automatically places the '\0' at the end of the string when it initializes the array. Let us try to print the above-mentioned string:
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+        int main () {
+            char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+            printf("Greeting message: %s\n", greeting );
+            return 0;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <table>
+        <tr>
+            <td><h3>S. No.</h3></td>
+            <td>
+                <h3> Functions & Purpose </h3>
+            </td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>
+                <h3>strcpy(s1, s2);                </h3>
+                <p>Copies string s2 into string s1   </p>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>
+                <h3>strcat(s1, s2);  </h3>
+                <p>Concatenates string s2 onto the end of string s1.   </p>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>
+                <h3>strlen(s1);     </h3>
+                <p>Returns the length of string s1.   </p>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>
+                <h3>strcmp(s1, s2);        </h3>
+                <p>Returns 0 if s1 and s2 are the same; less than 0 if s1<s2; greater than 0 if s1>s2.                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>
+                <h3>strchr(s1, ch);   </h3>
+                <p>Returns a pointer to the first occurrence of character ch in string s1.   </p>
+            </td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>
+                <h3>strstr(s1, s2);  </h3>
+                <p>Returns a pointer to the first occurrence of string s2 in string s1.                </p>
+            </td>
+        </tr>
+    </table>
+
+
+    <p id="code">Greeting message: Hello    </p>
+
+    <p>C supports a wide range of functions that manipulate null-terminated strings:
+        The following example uses some of the above-mentioned functions:
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+        #include <string.h>
+            
+        int main () {
+            
+            char str1[12] = "Hello";
+            char str2[12] = "World";
+            char str3[12];
+            int  len ;
+            
+            /* copy str1 into str3 */
+            strcpy(str3, str1);
+            printf("strcpy( str3, str1) :  %s\n", str3 );
+            
+            /* concatenates str1 and str2 */
+            strcat( str1, str2);
+            printf("strcat( str1, str2):   %s\n", str1 );
+            
+            /* total lenghth of str1 after concatenation */
+            len = strlen(str1);
+            printf("strlen(str1) :  %d\n", len );
+            return 0;
+        }
+        
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result −    </p>
+
+    <p id="code">
+        strcpy( str3, str1) :  Hello
+        strcat( str1, str2):   HelloWorld
+        strlen(str1) :  10
+
+    </p>
+
+</body>
+</html>
