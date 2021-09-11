@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C | Preprocessors</title>
+</head>
+<body>
+    <h1>Preprocessors</h1>
+    <p>The C  Preprocessor is not part of the compiler but is a separate step in the compilation process. In simplistic terms, a C Preprocessor is just a text substitution tool and they instruct the compiler to do required pre-processing before actual compilation. We'll refer to the C Preprocessor as the CPP.
+        All preprocessor commands begin with a pound symbol (#). It must be the first nonblank character, and for readability, a preprocessor directive should begin in the first column. The following section lists down all important preprocessor directives:
+    </p>
+
+    <h2>Preprocessors Examples</h2>
+    <p>Analyze the following examples to understand various directives.</p>
+
+    <p id="code">#define MAX_ARRAY_LENGTH 20</p>
+    <p>This directive tells the  CPP  to replace instances of  MAX_ARRAY_LENGTH  with  20.  Use #define for constants to increase readability.</p>
+
+    <p id="code">#include <stdio.h> 
+        #include "myheader.h"
+    </p>
+
+    <p>These directives tell the CPP to get stdio.h from System Libraries and add the text to the current source file. The next line tells CPP to get myheader.h from the local directory and add the content to the current source file.
+    </p>
+
+    <p id="code">
+        #undef  FILE_SIZE #define FILE_SIZE 42
+
+    </p>
+
+    <p>This tells the CPP to undefine existing FILE_SIZE and define it as 42.</p>
+
+    <p id="code">
+        #ifndef MESSAGE
+        #define MESSAGE "You wish!" #endif
+    </p>
+
+    <p>This tells the CPP to define MESSAGE only if MESSAGE isn't already defined.
+    </p>
+
+    <p id="code">
+        #ifdef DEBUG
+        /* Your debugging statements here */ 
+        #endif
+
+    </p>
+
+    <p>This tells the CPP to do the process the statements enclosed if DEBUG is defined. This is useful if you pass the -DDEBUG flag to gcc compiler at the time of compilation. This will define DEBUG, so you can turn debugging on and off on the fly during compilation.
+    </p>
+
+    <h2>Predefined Macros    </h2>
+    <p>ANSI C defines a number of macros. Although each one is available for your use in programming, the predefined macros should not be directly modified.
+        Let's try the following example:
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+ 
+            main()
+            
+            
+            {
+            printf("File :%s\n", FILE ); printf("Date :%s\n", DATE ); 
+            printf("Time :%s\n", TIME ); printf("Line :%d\n", LINE ); 
+            printf("ANSI :%d\n", STDC );
+             
+            }
+            
+    </p>
+
+    <p>When the above code in a file test.c is compiled and executed, it produces the following result:</p>
+
+    <p id="code">
+        File :test.c Date :Jun 2 2012
+        Time :03:36:24
+        Line :8
+        ANSI :1
+
+    </p>
+
+    <h2>Preprocessor Operators</h2>
+    <p>The C preprocessor offers following operators to help you in creating macros:
+    </p>
+
+
+    <h3>Macro Continuation (\)    </h3>
+    <p>A macro usually must be contained on a single line. The macro continuation operator is used to continue a macro that is too long for a single line. For example:
+    </p>
+
+    <p id="code">
+        #define  message_for(a, b)  \
+        printf(#a " and " #b ": We love you!\n"
+    </p>
+
+    <h3>Stringize (#)
+    </h3>
+
+    <p>The stringize or number-sign operator ('#'), when used within a macro definition, converts a macro parameter into a string constant. This operator may be used only in a macro that has a specified argument or parameter list. For example:
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+ 
+        #define  message_for(a, b)  \
+        printf(#a " and " #b ": We love you!\n")
+            
+        int main(void)
+        {
+        message_for(Carole, Debra);
+        return 0;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:</p>
+
+    <p id="code">
+        Carole and Debra: We love you!
+    </p>
+
+    <h3>Token Pasting (##)</h3>
+    <p>The token-pasting operator (##) within a macro definition combines two arguments. It permits two separate tokens in the macro definition to be joined into a single token. For example:
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+ 
+        #define tokenpaster(n) 
+        printf ("token" #n " = %d", token##n)
+            
+        int main(void)
+        {
+        int token34 = 40;
+            
+        tokenpaster(34);
+        return 0;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <p id="code">token34 = 40</p>
+
+    <p>How it happened, because this example results in the following actual output from the preprocessor:
+    </p>
+
+    <p id="code">printf ("token34 = %d", token34);</p>
+
+    <p>This example shows the concatenation of token##n into token34 and here we have used both stringize and token-pasting.
+    </p>
+
+    <h3>The defined() Operator
+    </h3>
+
+    <p>The preprocessor defined operator is used in constant expressions to determine if an identifier is defined using #define. If the specified identifier is defined, the value is true (non-zero). If the symbol is not defined, the value is false (zero). The defined operator is specified as follows:
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+ 
+        #if !defined (MESSAGE)
+        #define MESSAGE "You wish!" #endif
+            
+        int main(void)
+        {
+        printf("Here is the message: %s\n", MESSAGE);
+        return 0;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <p id="code">
+        Here is the message: You wish!
+    </p>
+
+    <h2>Parameterized Macros    </h2>
+    <p>One of the powerful functions of the CPP is the ability to simulate functions using parameterized macros. For example, we might have some code to square a number as follows:</p>
+    <p id="code">
+        int square(int x) {
+        return x * x;
+        }
+    </p>
+
+    <p>We can rewrite above code using a macro as follows:
+    </p>
+
+    <p id="code">#define square(x) ((x) * (x))</p>
+
+    <p> Macros with arguments must be defined using the #define directive before they can be used. The argument list is enclosed in parentheses and must immediately follow the macro name. Spaces are not allowed between and macro name and open parenthesis. For example:
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+ 
+        #define MAX(x,y) ((x) > (y) ? (x) : (y))
+            
+        int main(void)
+        {
+        printf("Max between 20 and 10 is %d\n", MAX(10, 20));
+        return 0;
+        }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <p id="code">Max between 20 and 10 is 20</p>
+
+
+
+
+
+</body>
+</html>
