@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C | Scope Rules</title>
+</head>
+<body>
+    
+    <h1>Scope Rules</h1>
+    <p>A scope in any programming is a region of the program where a defined variable can have its existence and beyond that variable, it cannot be accessed. There are three places where variables can be declared in the C programming language:
+    </p>
+
+    <ol>
+        <li>Inside a function or a block which is called local variables.</li>
+        <li>Outside of all functions which are called global variables.
+        </li>
+        <li>In the definition of function parameters which are called formal parameters.</li>
+    </ol>
+    
+    <p>Let us understand what are local and global variables, and formal parameters.
+    </p>
+
+    <h2>Local variables</h2>
+    <p>
+        Variables that are declared inside a function or block are called local variables. They can be used only by statements that are inside that function or block of code. Local variables are not known to functions outside their own. The following example shows how local variables are used. Here all the variables a, b, and c are local to main() function.
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+        int main ()
+        /* local variable declaration */
+        int a, b;
+        int c;
+        
+        /* actual initialization */
+        a = 10;
+        b = 20;
+        c = a + b;
+        
+        printf ("value of a = %d, b = %d and c = %d\n", a, b, c);
+        return 0;
+        }
+            
+    </p>
+
+    <h2>Globaal Variables</h2>
+    <p>
+        Global variables are defined outside a function, usually on top of the program. Global variables hold their values throughout the lifetime of your program and they can be accessed inside any of the functions defined for the program.
+        A global variable can be accessed by any function. That is, a global variable is available for use throughout your entire program after its declaration. The following program show how global variables are used in a program.
+
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+ 
+        /* global variable declaration */
+        int g;
+            
+        int main () {
+            
+            /* local variable declaration */
+            int a, b;
+            
+            /* actual initialization */
+            a = 10;
+            b = 20;
+            g = a + b;
+            
+            printf ("value of a = %d, b = %d and g = %d\n", a, b, g);
+            
+            return 0;
+        }
+        
+    </p>
+
+    <p>A program can have the same name for local and global variables but the value of a local variables inside a function will take preference. Here is an example:
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+        /* global variable declaration */
+        int g = 20;
+        
+        int main () {
+        
+            /* local variable declaration */
+            int g = 10;
+        
+            printf ("value of g = %d\n",  g);
+        
+            return 0;
+        }
+           
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <p id="code">value of g = 10</p>
+
+    <h2>Formal Parameters    </h2>
+
+    <p>Formal parameters are treated as local variables within a function and they take precedence over global variables. Following is an example:</p>
+
+    <p id="code">
+        #include <stdio.h>
+ 
+        /* global variable declaration */
+        int a = 20;
+            
+        int main () {
+            
+            /* local variable declaration in main function */
+            int a = 10;
+            int b = 20;
+            int c = 0;
+            
+            printf ("value of a in main() = %d\n",  a);
+            c = sum( a, b);
+            printf ("value of c in main() = %d\n",  c);
+            
+            return 0;
+        }
+        /* function to add two integers */
+        int sum(int a, int b) {
+            
+            printf ("value of a in sum() = %d\n",  a);
+            printf ("value of b in sum() = %d\n",  b);
+            
+            return a + b;
+        }
+        
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result     </p>
+
+    <p id="code">
+        value of a in main() = 10
+        value of a in sum() = 10
+        value of b in sum() = 20
+        value of c in main() = 30
+
+    </p>
+
+    <h2>Initializing Local and Global Variables</h2>
+
+    <p>When a local variable is defined, it is not initialized by the system, you must initialize it yourself. Global variables are initialized automatically by the system when you define them as follows:</p>
+
+    <table>
+        <tr>
+            <td><h3>Data Type</h3></td>
+            <td><h3>Initail Default Value</h3></td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>char</td>
+            <td>'\0'</td>
+        </tr>
+        <tr>
+            <td>float</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>double</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>pointer</td>
+            <td>NULL</td>
+        </tr>
+    </table>
+
+
+    <p>It is a good programming practice to initialize variables properly, otherwise, your program may produce unexpected results because uninitialized variables will take some garbage value already available at their memory location.
+    </p>
+
+    
+
+</body>
+</html>
