@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C | Array</title>
+</head>
+<body>
+
+    <h1>c Arrays</h1>
+    <p>
+        Arrays a kind of data structure that can store a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type.
+ 
+        Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables. A specific element in an array is accessed by an index.
+        
+        All arrays consist of contiguous memory locations. The lowest address corresponds to the first element and the highest address to the last element.
+
+    </p>
+
+    <h2>Declaring Arrays
+    </h2>
+
+    <p>To declare an array in C, a programmer specifies the type of the elements and the number of elements required by an array as follows −
+    </p>
+
+    <p id="code">
+        type arrayName [ arraySize ];
+    </p>
+
+    <p>This is called a single-dimensional array. The arraySize must be an integer constant greater than zero and type can be any valid C data type. For example, to declare a 10-element array called balance of type double, use this statement −
+    </p>
+
+    <p id="code">
+        double balance[10];
+    </p>
+
+    <p>Here balance is a variable array which is sufficient to hold up to 10 double numbers.
+    </p>
+
+    <h2>Initializing Arrays
+    </h2>
+
+    <p>You can initialize an array in C either one by one or using a single statement as follows −
+    </p>
+
+    <p id="code">
+        double balance[5] = {1000.0, 2.0, 3.4, 7.0, 50.0};
+    </p>
+
+    <p>The number of values between braces { } cannot be larger than the number of elements that we declare for the array between square brackets [ ].
+        If you omit the size of the array, an array just big enough to hold the initialization is created. Therefore, if you write −
+    </p>
+
+    <p id="code">double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};</p>
+
+    <p>You will create exactly the same array as you did in the previous example. Following is an example to assign a single element of the array −
+    </p>
+
+    <p id="code">balance[4] = 50.0;</p>
+
+    <p>The above statement assigns the 5th element in the array with a value of 50.0. All arrays have 0 as the index of their first element which is also called the base index and the last index of an array will be total size of the array minus
+        Shown below is the pictorial representation of the array we discussed above −
+    </p>
+
+    <h2>Accessing Array Elements
+    </h2>
+
+    <p>An element is accessed by indexing the array name. This is done by placing the index of the element within square brackets after the name of the array. For example −
+    </p>
+
+    <p id="code">
+        double salary = balance[9];
+    </p>
+
+    <p>The above statement will take the 10th element from the array and assign the value to salary variable. The following example Shows how to use all the three above mentioned concepts viz. declaration, assignment, and accessing arrays:
+    </p>
+
+    <p id="code">
+        #include <stdio.h>
+
+        int main () {
+            
+        int n[ 10 ]; /* n is an array of 10 integers */
+        int i,j;
+        
+        /* initialize elements of array n to 0 */     	
+        for ( i = 0; i < 10; i++ ) {
+            n[ i ] = i + 100; /* set element at location i to i + 100 */
+        }
+        
+        /* output each array element's value */
+        for (j = 0; j < 10; j++ ) {
+            printf("Element[%d] = %d\n", j, n[j] );
+        }
+        
+        return 0;
+    }
+            
+    </p>
+
+    <p>When the above code is compiled and executed, it produces the following result:
+    </p>
+
+    <p id="code">
+        Element[0] = 100
+        Element[1] = 101
+        Element[2] = 102
+        Element[3] = 103
+        Element[4] = 104
+        Element[5] = 105
+        Element[6] = 106
+        Element[7] = 107
+        Element[8] = 108
+
+    </p>
+
+    <table>
+        <tr>
+            <td><h3>S. No.</h3></td>
+            <td><h3>Concept & Description</h3></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><h3>Multi-dimensional arrays</h3>
+            <p>C supports multidimensional arrays. The simplest form of the multidimensional array is the two-dimensional array.
+            </p>
+        </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><h3>Passing arrays to functions</h3>
+            <p>You can pass to the function a pointer to an array by specifying the array's name without an index.
+            </p>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><h3>Return array from a function</h3>
+            <p>C allows a function to return an array.
+            </p>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><h3>Pointer to an array</h3>
+            <p>You can generate a pointer to the first element of an array by simply specifying the array name, without any index.
+            </p></td>
+        </tr>
+    </table>
+
+    <p id="code">Element[9] = 109</p>
+
+    
+
+</body>
+</html>
