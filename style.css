@@ -101,7 +101,12 @@ button:hover{
 /* ======================NAVBAR END=================== */
 
 
-
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 50px;
+}
 
 
 

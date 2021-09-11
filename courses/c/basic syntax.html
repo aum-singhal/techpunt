@@ -5,6 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C | Basic Syntax</title>
+
+    <!-- ============ Css Styling ============= -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+        body{
+            background-color: #052C4E;
+            display: flex;
+            flex-direction: column;
+            margin: 10px 50px;
+            font-size: 19px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 25px auto;
+        }
+        .code{
+            background-color: #021829;
+            padding: 13px 15px;
+            border-radius: 10px;
+            margin: 15px 0 ;
+            font-size: 20px;
+        }
+        #next{
+            margin: 20px auto;
+            padding: 16px 30px;
+            background: greenyellow;
+            color: black;
+            border-radius: 15px;
+            text-decoration: none;
+        }
+    </style>
+
 </head>
 <body>
     <h1>Basic Syntax</h1>
@@ -15,18 +55,18 @@
     <p>A C-program consists of varied tokens and a token is either a keyword, an identifier, a continuing, a string literal, or a logo. For example, the subsequent C statement consists of 5 tokens:
     </p>
 
-    <p id="code">printf("Hello, World! \n");</p>
+    <p class="code">printf("Hello, World! \n");</p>
 
     <p>The individual tokens are:
     </p>
-    <p id="code">printf ( "Hello, World! \n" ) ;</p>
+    <p class="code">printf ( "Hello, World! \n" ) ;</p>
     <p>In the C program, the semicolon is a statement terminator. That is, each individual statement must be ended with a semicolon. It indicates the end of one logical entity.
 
  
         For example, following are two different statements:
         </p>
 
-    <p id="code">
+    <p class="code">
         printf("Hello, World! \n");
         return 0;
         
@@ -35,7 +75,7 @@
     <h2>Comments</h2>
     <p>Comments are like helping text in your C program and that they are ignored by the compiler. They start with /* and terminates with the characters */ as shown below:
     </p>
-    <p id="code">/* my first program in C */</p>
+    <p class="code">/* my first program in C */</p>
     <p>You cannot have comments within comments and they do not occur within a string or character literals.</p>
 
     <h2>Identifier</h2>
@@ -44,7 +84,7 @@
         C doesn't allow punctuation characters like @, $, and a couple of within identifiers. C is a case-sensitive programming language. Thus, Manpower and manpower are two different identifiers in C. Here are some samples of acceptable identifiers:
         </p>
 
-    <p id="code">mohd zara abc move_name a_123
+    <p class="code">mohd zara abc move_name a_123
         myname50 _temp j a23b9 retVal
         
         </p>
@@ -59,99 +99,20 @@
         such as an int, ends and the next element begins. Therefore, within the following statement:
     </p>
 
-    <p id="code">int age;    </p>
+    <p class="code">int age;    </p>
 
     <p>There must be a minimum of one whitespace character (usually a space) between int and age for the compiler to be ready to distinguish them. On the opposite hand, 
         in the following statement:
         </p>
 
-    <p id="code">fruit = apples + oranges; // get the total fruit
+    <p class="code">fruit = apples + oranges; // get the total fruit
 
     </p>
 
     <p>No whitespace characters are necessary between fruit and =, or between = and apples, although you're liberal to include some if you would like for readability purposes.
     </p>
 
-    <div class="questions">
-
-        <h2>Quiz Time</h2>
-
-        <h3 id="que">
-            <h3>
-                1. Which one of the following is not a token?
-            </h3>
-            <button class="ans">Keywords</button>
-            <button class="ans">Identifier</button>
-            <button class="ans">Functions</button>
-            <button class="ans">Comments</button>
-        </h3>
-        <h3 id="que">
-            <h3>
-                2. Which of the following is the correct method of writing comments?(Answer=>4)
-            </h3>
-            <button class="ans">
-                //This is a comment
-            </button>
-            <button class="ans">/*This is a comment</button>
-            <button class="ans">(This is a comment)</button>
-            <button class="ans">/*This is a comment*/</button>
-        </h3>
-        <h3 id="que">
-            <h3>
-            3.  Which of the following is an incorrect identifier?
-            </h3>
-            <button class="ans">
-                car_55
-            </button>
-            <button class="ans">@car55</button>
-            <button class="ans">variable55</button>
-            <button class="ans">_variable</button>
-        </h3>
-        <h3 id="que">
-            <h3>
-                4. Which of the following is the required correction for the given piece of INCORRECT code :
-                {	int age=15 
-                    char name=Dylan;
-                }
-            </h3>
-            <button class="ans">
-                
-{	int age=15 
-	char name=Dylan
-}
-
-
-            </button>
-            <button class="ans">
-                
-{	int age=15;
-	char name=Dylan;
-}
-
-
-            </button>
-            <button class="ans">
-                
-{	int age=15 .
-	char name=Dylan .
-}
-
-
-            </button>
-            <button class="ans">
-                {	int age=15 /
-                    char name=Dylan /
-                }
-                
-                </button>
-        </h3>
-
-
-
-    </div>
-
-
-
+    <a href="./questions/basicQues.html" id="next">Next</a>
 
 </body>
 </html>

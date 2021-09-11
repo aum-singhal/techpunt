@@ -1,187 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C | Data Types</title>
+
+    <!-- ============== Css Style ============= -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #052C4E;
+            margin: 15px 50px;
+            font-size: 20px;
+        }
+
+        h1,
+        h2 {
+            margin: 15px auto;
+            text-align: center;
+        }
+
+        .code {
+            padding: 13px 15px;
+            margin: 20px 0;
+            font-size: 20px;
+            background-color: #021829;
+            border-radius: 10px;
+        }
+
+        table {
+            margin: 20px;
+        }
+
+        td {
+            padding: 5px 10px;
+            min-width: 20%;
+        }
+
+        #next {
+            margin: 30px 40vw;
+            padding: 16px 30px;
+            background: greenyellow;
+            color: black;
+            border-radius: 15px;
+            text-decoration: none;
+        }
+    </style>
+
+
 </head>
+
 <body>
-        <h1>C Data Types</h1>
-        <p> Within the C programming language, data types ask for an in-depth system used for declaring variables or functions of various types. The type of a variable determines what proportion of space it occupies in storage and the way the bit pattern stored is interpreted.
+    <h1>C Data Types</h1>
+    <p> Within the C programming language, data types ask for an in-depth system used for declaring variables or
+        functions of various types.<br> The type of a variable determines what proportion of space it occupies in
+        storage and the way the bit pattern stored is interpreted.
+        <br>
+        The types in C are often classified as follows:
+    </p>
+    <br>
+    <table>
 
-            The types in C are often classified as follows:
-            </p>
+        <tr>
+            <th>
+                <h2>S. No.</h2>
+            </th>
+            <th>
+                <h2>Types and Descriptions</h2>
+            </th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>
+                <h3>Basic Types</h3>
+                <p>They are arithmetic types and contain two types: (a) integer types and (b) floating-point types.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>
+                <h3>Enumerated types: </h3>
+                <p>They are again arithmetic types and that they are used to define variables that will only be assigned
+                    certain discrete integer values throughout the program.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>
+                <h3>The type void:
+                </h3>
+                <p>The type specifier void indicates that no value is out there.
+                </p>
 
-        <table>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>
+                <h3>Derived types:
+                </h3>
+                <p>They include (a) Pointer types, (b) Array types, (c) Structure types, (d) Union types and (e)
+                    Function types.
+                </p>
+            </td>
+        </tr>
 
-            <tr>
-                <td><h2>S. No.</h2></td>
-                <td><h2>Types and Descriptions</h2></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>
-                    <h3>Basic Types</h3>
-                    <p>They are arithmetic types and contain two types: (a) integer types and (b) floating-point types.
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>
-                    <h3>Enumerated types:       </h3>
-                    <p>They are again arithmetic types and that they are used to define variables that will only be assigned certain discrete integer values throughout the program.
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>
-                    <h3>The type void:
-                    </h3>
-                    <p>The type specifier void indicates that no value is out there.
-                    </p>
+        <p>The array types and structure types are referred to collectively as the aggregate types. The type of a
+            function specifies the sort of the function's return value. We will see basic types within the following
+            section, whereas, other types are going to be covered within the upcoming chapters.
+        </p>
+    </table>
+    <h2>Integer Types</h2>
+    <table>
 
-                </td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>
-                    <h3>Derived types:
-                    </h3>
-                    <p>They include (a) Pointer types, (b) Array types,  (c) Structure types, (d) Union types and (e) Function types. 
-                    </p>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <h3>Types</h3>
+            </td>
+            <td>
+                <h3>Storage</h3>
+            </td>
+            <td>
+                <h3>Value Range</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>char</td>
+            <td>1 Byte</td>
+            <td>-128 to 127 or 0 to 255</td>
+        </tr>
+        <tr>
+            <td>unsigned char</td>
+            <td>1 Byte</td>
+            <td>0 to 255</td>
+        </tr>
+        <tr>
+            <td>signed char</td>
+            <td>1 Byte</td>
+            <td>-128 to 127</td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>2 or 4 Bytes</td>
+            <td>
+                -32,768 to 32,767
 
-            <p>The array types and structure types are referred to collectively as the aggregate types. The type of a function specifies the sort of the function's return value. We will see basic types within the following section, whereas, other types are going to be covered within the upcoming chapters.
-            </p>
+            </td>
+        </tr>
+        <tr>
+            <td>unsigned int</td>
+            <td>2 or 4 Bytes</td>
+            <td>0 to 65,535</td>
+        </tr>
+        <tr>
+            <td>short</td>
+            <td>2 Bytes</td>
+            <td>-32,768 to 32,767</td>
+        </tr>
+        <tr>
+            <td>short</td>
+            <td>2 Bytes</td>
+            <td>
+                -32,768 to 32,767
 
-            <h2>Integer Types</h2>
-            <table>
+            </td>
+        </tr>
+        <tr>
+            <td>unsigned short</td>
+            <td> 2 Bytes</td>
+            <td>
+                0 to 65,535
 
-                <tr>
-                    <td><h3>Types</h3></td>
-                    <td><h3>Storage</h3></td>
-                    <td><h3>Value Range</h3></td>
-                </tr>
-                <tr>
-                    <td>char</td>
-                    <td>1 Byte</td>
-                    <td>-128 to 127 or 0 to 255</td>
-                </tr>
-                <tr>
-                    <td>unsigned char</td>
-                    <td>1 Byte</td>
-                    <td>0 to 255</td>
-                </tr>
-                <tr>
-                    <td>signed char</td>
-                    <td>1 Byte</td>
-                    <td>-128 to 127</td>
-                </tr>
-                <tr>
-                    <td>int</td>
-                    <td>2 or 4 Bytes</td>
-                    <td>
-                        -32,768 to 32,767
-                        
-                        </td>
-                </tr>
-                <tr>
-                    <td>unsigned int</td>
-                    <td>2 or 4 Bytes</td>
-                    <td>0 to 65,535</td>
-                </tr>
-                <tr>
-                    <td>short</td>
-                    <td>2 Bytes</td>
-                    <td>-32,768 to 32,767</td>
-                </tr>
-                <tr>
-                    <td>short</td>
-                    <td>2 Bytes</td>
-                    <td>
-                        -32,768 to 32,767
-                        
-                        </td>
-                </tr>
-                <tr>
-                    <td>unsigned short</td>
-                    <td> 2 Bytes</td>
-                    <td>
-                        0 to 65,535
-                        
-                        </td>
-                </tr>
-                <tr>
-                    <td>long</td>
-                    <td>4 Bytes</td>
-                    <td>
-                        -2,147,483 to 2,147,483,6
-                        
-                        </td>
-                </tr>
-                <tr>
-                    <td>unsigned long</td>
-                    <td>4 Bytes</td>
-                    <td>0 to 4,294,967,295</td>
-                </tr>
+            </td>
+        </tr>
+        <tr>
+            <td>long</td>
+            <td>4 Bytes</td>
+            <td>
+                -2,147,483 to 2,147,483,6
+
+            </td>
+        </tr>
+        <tr>
+            <td>unsigned long</td>
+            <td>4 Bytes</td>
+            <td>0 to 4,294,967,295</td>
+        </tr>
 
 
-            </table>
+    </table>
 
-        </table>
-
-    <p>To get the precise size of a kind or a variable on a specific platform, you'll use the sizeof operator. The expression sizeof(type) yields the storage size of the thing or type in bytes. Following is an example to urge the dimensions of int type on any machine:
+    <p>To get the precise size of a kind or a variable on a specific platform, you'll use the sizeof operator. The
+        expression sizeof(type) yields the storage size of the thing or type in bytes. Following is an example to urge
+        the dimensions of int type on any machine:
     </p>
 
-    <p id="code">
-        #include<stdio.h>
-        #include<limits.h>
-        
-        int main()
-          {
-              printf("Storage size for int : %d \n", sizeof(int));  
-              return 0;                                
-        } 
-        
-        </p>
-    <h2>floating-point Types</h2>
-    <p>The following table gives you details about standard floating-point types with storage sizes and value ranges and their precision:
-        The header file float.h defines macros that allow you to use these values and other details about the binary representation of real numbers in your programs. The following example will print space for storing taken by a float type and its range values:
-        </p>
+    <p class="code">
+        #include<stdio.h><br>
+            #include<limits.h><br>
+                <br><br>
+                int main()
+                <br>
+                {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;printf("Storage size for int : %d \n", sizeof(int)); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return 0; <br>
+                }
 
-    <p id="code">
-        #include<stdio.h>
-        #include<float.h>
-        
-        int main()
-        {
-            printf("Storage size for float : %d \n", sizeof(float)); 
-            printf("Minimum float positive value: %E\n", FLT_MIN );  
-            printf("Maximum float positive value: %E\n", FLT_MAX );  
-            printf("Precision value: %d\n", FLT_DIG );
-               
-            return 0;
-        } 
-        
-        </p>
+    </p>
+    <h2>floating-point Types</h2>
+    <p>The following table gives you details about standard floating-point types with storage sizes and value ranges and
+        their precision:
+        The header file float.h defines macros that allow you to use these values and other details about the binary
+        representation of real numbers in your programs. The following example will print space for storing taken by a
+        float type and its range values:
+    </p>
+
+    <p class="code">
+        #include<stdio.h><br>
+            #include<float.h><br>
+                <br><br>
+                int main()<br>
+                {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;printf("Storage size for float : %d \n", sizeof(float)); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;printf("Minimum float positive value: %E\n", FLT_MIN ); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;printf("Maximum float positive value: %E\n", FLT_MAX ); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;printf("Precision value: %d\n", FLT_DIG );<br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+                }
+
+    </p>
     <h2>The Void Types</h2>
     <p>The void type specifies that no value is out there. It's utilized in three sorts of situations.
     </p>
 
     <table>
         <tr>
-            <td><h3>S. No.</h3></td>
-            <td><h3>Types and Descriptions</h3></td>
+            <td>
+                <h3>S. No.</h3>
+            </td>
+            <td>
+                <h3>Types and Descriptions</h3>
+            </td>
         </tr>
         <tr>
             <td>1</td>
             <td>
                 <h3>Function return as void</h3>
-                <p>There are various functions in C which don’t return value otherwise you can say they return void. A function with no return value has the return type as void. For instance, void exit (int status);
+                <p>There are various functions in C which don’t return value otherwise you can say they return void. A
+                    function with no return value has the return type as void. For instance, void exit (int status);
                 </p>
             </td>
         </tr>
@@ -190,7 +271,8 @@
             <td>
                 <h3>Function arguments as void
                 </h3>
-                <p>There are various functions in C which do not accept any parameter. A function with no parameter can accept as a void. For example, int rand(void);
+                <p>There are various functions in C which do not accept any parameter. A function with no parameter can
+                    accept as a void. For example, int rand(void);
                 </p>
             </td>
         </tr>
@@ -198,14 +280,17 @@
             <td>3</td>
             <td>
                 <h3>Pointer to void</h3>
-                <p>A pointer of type void * represents the address of an object, but not its type. For example, a memory allocation function void *malloc( size_t size ); returns a pointer to void which may be cast to any data type. 
+                <p>A pointer of type void * represents the address of an object, but not its type. For example, a memory
+                    allocation function void *malloc( size_t size ); returns a pointer to void which may be cast to any
+                    data type.
                 </p>
             </td>
         </tr>
     </table>
 
 
-
+    <a href="./questions/datatypes.html" id="next">Next</a>
 
 </body>
+
 </html>

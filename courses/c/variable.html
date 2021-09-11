@@ -5,16 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C | Variables</title>
-</head>
-<body>
-    
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C | Variables</title>
+
+    <!-- =========== Css Links ============ -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+        body{
+            background-color: #052C4E;
+            margin: 20px 50px;
+            font-size: 19px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px;
+        }
+        .code{
+            padding: 13px 15px;
+            margin: 20px 0;
+            font-size: 20px;
+            background-color: #021829;
+            border-radius: 10px;
+        }
+        ol{
+            padding: 5px 20px;
+        }
+        #next{
+            text-decoration: none;
+            padding: 15px 30px;
+            margin: 20px 40vw;
+            background: greenyellow;
+            border-radius: 15px;
+            color: black;
+        }
+    </style>
+
 </head>
 <body>
     
@@ -56,15 +90,15 @@
 
     <h2>Variable Definition in C:</h2>
     <p>A variable definition means to inform the compiler where and how much to make the storage for the variable. A variable definition specifies a knowledge type and contains an inventory of 1 or more variables of that type as follows:</p>
-    <p id="code">type variable_list;</p>
+    <p class="code">type variable_list;</p>
 
     <p>Here, the sort must be a legitimate C data type including char, w_char, int, float, double, bool or any user-defined object, etc., and variable_list may contain one or more identifier names separated by commas. Some valid declarations are shown here:
     </p>
 
-    <p id="code">
-        int          i, j, k; 
-        char       c, ch; 
-        float       f, salary; 
+    <p class="code">
+        int          i, j, k; <br>
+        char       c, ch; <br>
+        float       f, salary; <br> 
         double   d;
     </p>
 
@@ -72,7 +106,7 @@
         Variables are often initialized (assigned an initial value) in their declaration. The initializer consists of an equal sign followed by a continuing expression as follows:
     </p>
 
-    <p id="code">type variable_name = value;</p>
+    <p class="code">type variable_name = value;</p>
 
     <h2>Variable declaration in C:</h2>
     <p>A variable declaration provides assurance to the compiler that there's one variable existing with the given type and name in order that the compiler proceeds with further compilation without having complete detail about the variable. A variable declaration has its meaning at the time of compilation only, compiler needs actual variable declaration at the time of linking of the program.
@@ -97,13 +131,15 @@
     <p>Variables are lvalues then may appear on the left-hand side of an assignment. Numeric literals are rvalues then might not be assigned and can't appear on the left-hand side. Following may be a valid statement:
     </p>
 
-    <p id="code">int g = 20;</p>
+    <p class="code">int g = 20;</p>
 
     <p>But the following isn't a legitimate statement and would generate a compile-time error:
     </p>
-    <p id="cod">10 = 20;</p>
+    <p class="code">10 = 20;</p>
 
-    <div class="questions">
+    <a href="./questions/variables.html" id="next">Next</a>
+
+    <!-- <div class="questions">
 
         <h2>Quiz Time</h2>
 
@@ -191,11 +227,7 @@
 
 
 
-    </div>
-
-</body>
-</html>
-
+    </div> -->
 
 </body>
 </html>
