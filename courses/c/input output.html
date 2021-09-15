@@ -5,6 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C |Input/Output</title>
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Zilla Slab', serif;
+        }
+        body{
+            background-color: #052C4E;
+            font-size: 19px;
+            margin: 20px 50px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px 5px;
+        }
+        .code{
+            background-color: #021829;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 15px 10px;
+            font-family: 'Source Code Pro', monospace;
+        }
+        table{
+            margin: 10px 30px;
+        }
+        td{
+            padding: 5px 20px;
+        }
+        #next{
+            background: greenyellow;
+            padding: 15px 30px;
+            margin: 30px 40vw !important;
+            border-radius: 15px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -48,19 +95,19 @@
         The int putchar(int c) function puts the passed character on the screen and returns the same character. This function puts only a single character at a time. You can use this method in the loop in case you want to display more than one character on the screen. Check the following example:
     </p>
 
-    <p id="code">
-        #include <stdio.h>
-        int main( ) {
+    <p class="code">
+        #include <stdio.h><br>
+        int main( ) {<br><br>
             
-            int c;
+            &nbsp;&nbsp;&nbsp;&nbsp;int c;<br><br>
             
-            printf( "Enter a value :");
-            c = getchar( );
+            &nbsp;&nbsp;&nbsp;&nbsp;printf( "Enter a value :");<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;c = getchar( );<br><br>
             
-            printf( "\nYou entered: ");
-            putchar( c );
+            &nbsp;&nbsp;&nbsp;&nbsp;printf( "\nYou entered: ");<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;putchar( c );<br><br>
             
-            return 0;
+            &nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
         }
             
     </p>
@@ -68,10 +115,10 @@
     <p>When the above code is compiled and executed, it waits for you to input some text. When you enter a text and press enter, then the program proceeds and reads only a single character and displays it as follows:
     </p>
 
-    <p id="code">
-        $./a.out
-        Enter a value : this is test
-        You entered: t
+    <p class="code">
+        $./a.out<br>
+        Enter a value : this is test<br>
+        You entered: t<br>
     </p>
 
     <h2>The gets() and puts() Functions    </h2>
@@ -81,18 +128,18 @@
         NOTE: Though it has been deprecated to use gets() function, Instead of using gets, you want to use fgets().
     </p>
 
-    <p id="code">
-        #include <stdio.h>
-        int main( ) {
+    <p class="code">
+        #include <stdio.h><br>
+        int main( ) {<br><br>
             
-            char str[100];
+            &nbsp;&nbsp;&nbsp;&nbsp;char str[100];<br><br>
             
-            printf( "Enter a value :");
-            gets( str );
+            &nbsp;&nbsp;&nbsp;&nbsp;printf( "Enter a value :");<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;gets( str );<br><br>
             
-            printf( "\nYou entered: ");
-            puts( str );
-            return 0;
+            &nbsp;&nbsp;&nbsp;&nbsp;printf( "\nYou entered: ");<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;puts( str );
+            &nbsp;&nbsp;&nbsp;&nbsp;return 0;
         }
             
     </p> 
@@ -100,9 +147,9 @@
     <p>When the above code is compiled and executed, it waits for you to input some text. When you enter a text and press enter, then the program proceeds and reads the complete line till end, and displays it as follows:
     </p>
 
-    <p id="code">
-        $./a.out
-        Enter a value : this is test
+    <p class="code">
+        $./a.out<br>
+        Enter a value : this is test<br>
         You entered: this is test
     </p>
 
@@ -113,29 +160,29 @@
         The format can be a simple constant string, but you can specify %s, %d, %c, %f, etc., to print or read strings, integer, character or float respectively. There are many other formatting options available which can be used based on requirements. Let us now proceed with a simple example to understand the concepts better:
     </p>
 
-    <p id="code">
-        #include <stdio.h>
-        int main( ) {
+    <p class="code">
+        #include <stdio.h><br>
+        int main( ) {<br><br>
             
-            char str[100];
-            int i;
+            &nbsp;&nbsp;&nbsp;&nbsp;char str[100];<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;int i;<br><br>
             
-            printf( "Enter a value :");
-            scanf("%s %d", str, &i);
+            &nbsp;&nbsp;&nbsp;&nbsp;printf( "Enter a value :");<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;scanf("%s %d", str, &i);<br><br>
             
-            printf( "\nYou entered: %s %d ", str, i);
+            &nbsp;&nbsp;&nbsp;&nbsp;printf( "\nYou entered: %s %d ", str, i);<br><br>
             
-            return 0;
+            &nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
         }
             
     </p>
 
     <p>When the above code is compiled and executed, it waits for you to input some text. When you enter a text and press enter, then program proceeds and reads the input and displays it as follows:</p>
 
-    <p id="code">
-        $./a.out
-        Enter a value : seven 7
-        You entered: seven 7
+    <p class="code">
+        $./a.out<br>
+        Enter a value : seven 7 <br>
+        You entered: seven 7 <br>   
 
     </p>
 
@@ -143,7 +190,7 @@
         Here, it should be noted that scanf() expects input in the same format as you provided %s and %d, which means you have to provide valid inputs like "string integer". If you provide "string string" or "integer integer", then it will be assumed as wrong input. Secondly, while reading a string, scanf() stops reading as soon as it encounters a space, so "this is test" are three strings for scanf().
     </p>
 
-    
+    <a href="" id="next">Next</a>
 
 
 

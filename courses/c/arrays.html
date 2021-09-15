@@ -5,6 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C | Array</title>
+
+    <!-- ============== Css Style =============== -->
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Zilla Slab', serif;
+        }
+        body{
+            background-color: #052C4E;
+            font-size: 19px;
+            margin: 20px 50px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px 5px;
+        }
+        .code{
+            background-color: #021829;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 15px 10px;
+            font-family: 'Source Code Pro', monospace;
+        }
+        table{
+            margin: 10px 30px;
+        }
+        td{
+            padding: 5px 20px;
+        }
+        #next{
+            background: greenyellow;
+            padding: 15px 30px;
+            margin: 30px 40vw !important;
+            border-radius: 15px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 <body>
 
@@ -24,14 +72,14 @@
     <p>To declare an array in C, a programmer specifies the type of the elements and the number of elements required by an array as follows −
     </p>
 
-    <p id="code">
+    <p class="code">
         type arrayName [ arraySize ];
     </p>
 
     <p>This is called a single-dimensional array. The arraySize must be an integer constant greater than zero and type can be any valid C data type. For example, to declare a 10-element array called balance of type double, use this statement −
     </p>
 
-    <p id="code">
+    <p class="code">
         double balance[10];
     </p>
 
@@ -44,7 +92,7 @@
     <p>You can initialize an array in C either one by one or using a single statement as follows −
     </p>
 
-    <p id="code">
+    <p class="code">
         double balance[5] = {1000.0, 2.0, 3.4, 7.0, 50.0};
     </p>
 
@@ -52,12 +100,12 @@
         If you omit the size of the array, an array just big enough to hold the initialization is created. Therefore, if you write −
     </p>
 
-    <p id="code">double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};</p>
+    <p class="code">double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};</p>
 
     <p>You will create exactly the same array as you did in the previous example. Following is an example to assign a single element of the array −
     </p>
 
-    <p id="code">balance[4] = 50.0;</p>
+    <p class="code">balance[4] = 50.0;</p>
 
     <p>The above statement assigns the 5th element in the array with a value of 50.0. All arrays have 0 as the index of their first element which is also called the base index and the last index of an array will be total size of the array minus
         Shown below is the pictorial representation of the array we discussed above −
@@ -69,32 +117,32 @@
     <p>An element is accessed by indexing the array name. This is done by placing the index of the element within square brackets after the name of the array. For example −
     </p>
 
-    <p id="code">
+    <p class="code">
         double salary = balance[9];
     </p>
 
     <p>The above statement will take the 10th element from the array and assign the value to salary variable. The following example Shows how to use all the three above mentioned concepts viz. declaration, assignment, and accessing arrays:
     </p>
 
-    <p id="code">
-        #include <stdio.h>
-
-        int main () {
+    <p class="code">
+        #include <stdio.h><br>
+            <br>
+        int main () {<br>
             
-        int n[ 10 ]; /* n is an array of 10 integers */
-        int i,j;
+        &nbsp;&nbsp;&nbsp;&nbsp;int n[ 10 ];&nbsp;&nbsp; /* n is an array of 10 integers */<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;int i,j;<br><br>
         
-        /* initialize elements of array n to 0 */     	
-        for ( i = 0; i < 10; i++ ) {
-            n[ i ] = i + 100; /* set element at location i to i + 100 */
-        }
+        &nbsp;&nbsp;&nbsp;&nbsp;/* initialize elements of array n to 0 */     	<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;for ( i = 0; i < 10; i++ ) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n[ i ] = i + 100;&nbsp;&nbsp; /* set element at location i to i + 100 */<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
         
-        /* output each array element's value */
-        for (j = 0; j < 10; j++ ) {
-            printf("Element[%d] = %d\n", j, n[j] );
-        }
+            &nbsp;&nbsp;&nbsp;&nbsp; /* output each array element's value */<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;for (j = 0; j < 10; j++ ) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Element[%d] = %d\n", j, n[j] );<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
         
-        return 0;
+                &nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
     }
             
     </p>
@@ -102,16 +150,16 @@
     <p>When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">
-        Element[0] = 100
-        Element[1] = 101
-        Element[2] = 102
-        Element[3] = 103
-        Element[4] = 104
-        Element[5] = 105
-        Element[6] = 106
-        Element[7] = 107
-        Element[8] = 108
+    <p class="code">
+        Element[0] = 100<br>
+        Element[1] = 101<br>
+        Element[2] = 102<br>
+        Element[3] = 103<br>
+        Element[4] = 104<br>
+        Element[5] = 105<br>
+        Element[6] = 106<br>
+        Element[7] = 107<br>
+        Element[8] = 108<br>
 
     </p>
 
@@ -149,9 +197,9 @@
         </tr>
     </table>
 
-    <p id="code">Element[9] = 109</p>
+    <p class="code">Element[9] = 109</p><br>
 
-    
+    <a href="" id="next">Next</a>
 
 </body>
 </html>

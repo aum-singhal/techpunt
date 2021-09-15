@@ -5,6 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Zilla Slab', serif;
+        }
+        body{
+            background-color: #052C4E;
+            font-size: 19px;
+            margin: 20px 50px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px 5px;
+        }
+        .code{
+            background-color: #021829;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 15px 10px;
+            font-family: 'Source Code Pro', monospace;
+        }
+        table{
+            margin: 10px 30px;
+        }
+        td{
+            padding: 5px 20px;
+        }
+        #next{
+            background: greenyellow;
+            padding: 15px 30px;
+            margin: 30px 40vw !important;
+            border-radius: 15px;
+            text-decoration: none;
+            color: black;
+        }
+        img{
+            margin: 10px auto;
+        }
+    </style>
 </head>
 <body>
 
@@ -27,11 +76,11 @@
         The syntax of an if statement in the C programming language is: 
     </p>
 
-    <p id="code">
-    if(boolean_expression)
-    {
-    /* statement(s) will execute if the boolean expression is true */
-    }
+    <p class="code">
+    if(boolean_expression)<br>
+    {<br>
+    /* statement(s) will execute if the boolean expression is true */<br>
+    }<br>
 
     </p>
 
@@ -45,18 +94,18 @@
     <img src="/assets/data/if.png" alt="if decision-making structure- condition if true code is executed if false code is skipped">
 
     <p>Example</p>
-    <p id="code">
-        #include <stdio.h>
-        int main ()
-        {
-        /* local variable definition */ int a = 10
-        /* check the boolean condition using if statement */ if( a < 20 )
-        {
-        /* if condition is true then print the following */ printf("a is less than 20\n" );
-        }
-        printf("value of a is : %d\n", a);
+    <p class="code">
+        #include <stdio.h><br>
+        int main ()<br>
+        {<br>
+        /* local variable definition */ int a = 10<br>
+        /* check the boolean condition using if statement */ if( a < 20 )<br>
+        {<br>
+        /* if condition is true then print the following */ printf("a is less than 20\n" );<br>
+        }<br>
+        printf("value of a is : %d\n", a);<br>
         
-        return 0;
+        return 0;<br>
         }
            
     </p>
@@ -64,7 +113,7 @@
     <p>When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">a is less than 20;
+    <p class="code">a is less than 20;<br>
         value of a is : 10
     </p>
 
@@ -76,13 +125,13 @@
     The syntax of an if...else statement in the C programming language is:
     </p>
 
-    <p id="code">if(boolean_expression)
-        {
-        /* statement(s) will execute if the boolean expression is true */
-        }
-        else
-        {
-        /* statement(s) will execute if the boolean expression is false */
+    <p class="code">if(boolean_expression)<br>
+        {<br>
+        /* statement(s) will execute if the boolean expression is true */<br>
+        }<br>
+        else<br>
+        {<br>
+        /* statement(s) will execute if the boolean expression is false */<br>
         }
     </p>
 
@@ -93,28 +142,28 @@
     <img src="/assets/data/if-else.png" alt="if-else flow diagram- if condition is true then if part will be executed if not then else part will be executed">
 
     <p>Example</p>
-    <p id="code">
-        #include <stdio.h>
-        int main ()
-        {
-        /* local variable definition */ int a = 100;
-        /* check the boolean condition */ if( a < 20 )
-        {
-        /* if condition is true then print the following */ printf("a is less than 20\n" );
-        }
-        else
-        {
-        /* if condition is false then print the following */ printf("a is not less than 20\n" );
-        }
-        printf("value of a is : %d\n", a);
-        return 0;
+    <p class="code">
+        #include <stdio.h><br>
+        int main ()<br>
+        {<br>
+        /* local variable definition */ int a = 100;<br>
+        /* check the boolean condition */ if( a < 20 )<br>
+        {<br>
+        /* if condition is true then print the following */ printf("a is less than 20\n" );<br>
+        }<br>
+        else<br>
+        {<br>
+        /* if condition is false then print the following */ printf("a is not less than 20\n" );<br>
+        }<br>
+        printf("value of a is : %d\n", a);<br>
+        return 0;<br>
         }
             
     </p>
 
     <p>When the above code is compiled and executed, it produces the following result:</p>
     
-    <p id="code">a is not less than 20;
+    <p class="code">a is not less than 20;<br>
         value of a is : 100
     </p>
 
@@ -138,53 +187,53 @@
         The syntax of an if...else if...else statement in C programming language is:
     </p>
 
-    <p id="code">
-        if(boolean_expression 1)
-        {
-        /* Executes when the boolean expression 1 is true */
-        }
-        else if( boolean_expression 2)
-        {
-        /* Executes when the boolean expression 2 is true */
-        }
-        else if( boolean_expression 3)
-        {
-        /* Executes when the boolean expression 3 is true */
-        }
-        else
-        {
-        /* executes when the none of the above condition is true */
-        }
+    <p class="code">
+        if(boolean_expression 1)<br>
+        {<br>
+        /* Executes when the boolean expression 1 is true */<br>
+        }<br>
+        else if( boolean_expression 2)<br>
+        {<br>
+        /* Executes when the boolean expression 2 is true */<br>
+        }<br>
+        else if( boolean_expression 3)<br>
+        {<br>
+        /* Executes when the boolean expression 3 is true */<br>
+        }<br>
+        else<br>
+        {<br>
+        /* executes when the none of the above condition is true */<br>
+        }<br>
 
     </p>
 
     <p>Example</p>
-    <p id="code">
-        #include <stdio.h>
+    <p class="code">
+        #include <stdio.h><br>
  
-        int main ()
-        {
-        /* local variable definition */ int a = 100;
+        int main ()<br>
+        {<br>
+        /* local variable definition */ int a = 100;<br>
             
-        /* check the boolean condition */ if( a == 10 )
-        {
-        /* if condition is true then print the following */ printf("Value of a is 10\n" );
-        }
-        else if( a == 20 )
-        {
-        /* if else if condition is true */ printf("Value of a is 20\n" );
-        }
-        else if( a == 30 )
-        {
-        /* if else if condition is true  */ printf("Value of a is 30\n" );
-        }
-        else
-        {
-        /* if none of the conditions is true */ printf("None of the values is matching\n" );
-        }
-        printf("Exact value of a is: %d\n", a );
+        /* check the boolean condition */ if( a == 10 )<br>
+        {<br>
+        /* if condition is true then print the following */ printf("Value of a is 10\n" );<br>
+        }<br>
+        else if( a == 20 )<br>
+        {<br>
+        /* if else if condition is true */ printf("Value of a is 20\n" );<br>
+        }<br>
+        else if( a == 30 )<br>
+        {<br>
+        /* if else if condition is true  */ printf("Value of a is 30\n" );<br>
+        }<br>
+        else<br>
+        {<br>
+        /* if none of the conditions is true */ printf("None of the values is matching\n" );<br>
+        }<br>
+        printf("Exact value of a is: %d\n", a );<br>
             
-        return 0;
+        return 0;<br>
         }
             
     </p>
@@ -192,7 +241,7 @@
     <p>When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">None of the values is matching
+    <p class="code">None of the values is matching
         Exact value of a is: 100
     </p>
 
@@ -205,13 +254,13 @@
         The syntax for a nested if statement is as follows:
     </p>
 
-    <p id="code">
-        if( boolean_expression 1)
-        {
-        /* Executes when the boolean expression 1 is true */ if(boolean_expression 2)
-        {
-        /* Executes when the boolean expression 2 is true */
-        }
+    <p class="code">
+        if( boolean_expression 1)<br>
+        {<br>
+        /* Executes when the boolean expression 1 is true */ if(boolean_expression 2)<br>
+        {<br>
+        /* Executes when the boolean expression 2 is true */<br>
+        }<br>
         }
 
     </p>
@@ -221,25 +270,25 @@
         Example
     </p>
 
-    <p id="code">
-        #include <stdio.h>
+    <p class="code">
+        #include <stdio.h><br>
  
-        int main ()
-        {
-        /* local variable definition */ int a = 100;
-        int b = 200;
+        int main ()<br>
+        {<br>
+        /* local variable definition */ int a = 100;<br>
+        int b = 200;<br>
             
-        /* check the boolean condition */
-        if( a == 100 )
-        {
-        /* if condition is true then check the following */ if( b == 200 )
-        {
-        /* if condition is true then print the following */ printf("Value of a is 100 and b is 200\n" );
-        }
-        }
-        printf("Exact value of a is : %d\n", a ); printf("Exact value of b is : %d\n", b );
+        /* check the boolean condition */<br>
+        if( a == 100 )<br>
+        {<br>
+        /* if condition is true then check the following */ if( b == 200 )<br>
+        {<br>
+        /* if condition is true then print the following */ printf("Value of a is 100 and b is 200\n" );<br>
+        }<br>
+        }<br>
+        printf("Exact value of a is : %d\n", a ); printf("Exact value of b is : %d\n", b );<br>
             
-        return 0;
+        return 0;<br>
         }
             
     </p>
@@ -249,8 +298,8 @@
 
     </p>
 
-    <p id="code">
-        Value of a is 100 and b is 200 Exact value of a is : 100
+    <p class="code">
+        Value of a is 100 and b is 200 Exact value of a is : 100<br>
         Exact value of b is : 200
 
     </p>
@@ -265,15 +314,15 @@
 
     </p>
 
-    <p id="code">
-        switch(expression){
-        case constant-expression  : statement(s);
-        break; /* optional */ case constant-expression                       	:
-        statement(s);
-        break; /* optional */
+    <p class="code">
+        switch(expression){<br>
+        case constant-expression  : statement(s);<br>
+        break; /* optional */ case constant-expression:<br>
+        statement(s);<br>
+        break; /* optional */<br>
             
-        /* you can have any number of case statements */ default : /* Optional */
-        statement(s);
+        /* you can have any number of case statements */ default : /* Optional */<br>
+        statement(s);<br>
         }
             
     </p>
@@ -300,28 +349,28 @@
     <img src="/assets/data/switch.png" alt="switch statement flow diagram- an expression will be checked for each case and will run if any of them is true if not then the default statement will be executed (if present)">
 
     <p>Example</p>
-    <p id="code">
-        #include <stdio.h>
+    <p class="code">
+        #include <stdio.h><br>
  
-        int main ()
-        {
-        /* local variable definition */ char grade = 'B';
-        switch(grade)
-        {
-        case 'A' :
-        printf("Excellent!\n" ); break;
-        case 'B' :
-        case 'C' :
-        printf("Well done\n" ); break;
-        case 'D' :
-        printf("You passed\n" ); break;
-        case 'F' :
-        printf("Better try again\n" ); break;
-        default :
-        printf("Invalid grade\n" );
-        }
-        printf("Your grade is  %c\n", grade );
-        return 0;
+        int main ()<br>
+        {<br>
+        /* local variable definition */ char grade = 'B';<br>
+        switch(grade)<br>
+        {<br>
+        case 'A' :<br>
+        printf("Excellent!\n" ); break;<br>
+        case 'B' :<br>
+        case 'C' :<br>
+        printf("Well done\n" ); break;<br>
+        case 'D' :<br>
+        printf("You passed\n" ); break;<br>
+        case 'F' :<br>
+        printf("Better try again\n" ); break;<br>
+        default :<br>
+        printf("Invalid grade\n" );<br>
+        }<br>
+        printf("Your grade is  %c\n", grade );<br>
+        return 0;<br>
         }
             
     </p>
@@ -329,8 +378,8 @@
     <p>When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">
-        Well done 
+    <p class="code">
+        Well done <br>
         Your grade is B
     </p>
 
@@ -343,37 +392,37 @@
         The syntax for a nested switch statement is as follows:
     </p>
 
-    <p id="code">
-        switch(ch1) { case 'A':
-        printf("This A is part of outer switch" ); switch(ch2) {
-        case 'A':
-        printf("This A is part of inner switch" ); break;
-        case 'B': /* case code */
-        }
-        break;
-        case 'B': /* case code */
+    <p class="code">
+        switch(ch1) { case 'A':<br>
+        printf("This A is part of outer switch" ); switch(ch2) {<br>
+        case 'A':<br>
+        printf("This A is part of inner switch" ); break;<br>
+        case 'B': /* case code */<br>
+        }<br>
+        break;<br>
+        case 'B': /* case code */<br>
         }
 
     </p>
 
     <p>Example</p>
 
-    <p id="code">
-        #include <stdio.h>
-        int main ()
-        {
-        /* local variable definition */ int a = 100;
-        int b = 200;
+    <p class="code">
+        #include <stdio.h><br>
+        int main ()<br>
+        {<br>
+        /* local variable definition */ int a = 100;<br>
+        int b = 200;<br>
             
-        switch(a) { case 100:
-        printf("This is part of outer switch\n", a ); switch(b) {
-        case 200:
-        printf("This is part of inner switch\n", a );
-        }
-        }
-        printf("Exact value of a is : %d\n", a ); printf("Exact value of b is : %d\n", b );
+        switch(a) { case 100:<br>
+        printf("This is part of outer switch\n", a ); switch(b) {<br>
+        case 200:<br>
+        printf("This is part of inner switch\n", a );<br>
+        }<br>
+        }<br>
+        printf("Exact value of a is : %d\n", a );<br> printf("Exact value of b is : %d\n", b );<br>
             
-        return 0;
+        return 0;<br>
         }
             
     </p>
@@ -381,8 +430,8 @@
     <p>When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">
-        This is part of outer switch This is part of inner switch Exact value of a is : 100
+    <p class="code">
+        This is part of outer switch <br>This is part of inner switch <br>Exact value of a is : 100<br>
         Exact value of b is : 200
 
     </p>
@@ -393,7 +442,7 @@
     <p>We have covered conditional operator ? : in previous chapter which can be  used  to replace if...else statements. It has the following general form:
     </p>
 
-    <p id="code">
+    <p class="code">
         Exp1 ? Exp2 : Exp3;
     </p>
 
@@ -403,6 +452,8 @@
         The value of a ? expression is determined like this: Exp1 is evaluated. If it is true, then Exp2 is evaluated and becomes the value of the entire ? expression. If Exp1 is false, then Exp3 is evaluated and its value becomes the value of the expression.
 
     </p>
+
+    <a href="" id="next">Next</a>
 
 </body>
 </html>

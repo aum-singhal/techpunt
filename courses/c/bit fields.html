@@ -5,6 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C | Bit Feilds</title>
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Zilla Slab', serif;
+        }
+        body{
+            background-color: #052C4E;
+            font-size: 19px;
+            margin: 0 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px 5px;
+        }
+        .code{
+            background-color: #021829;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 15px 10px;
+            font-family: 'Source Code Pro', monospace;
+        }
+        table{
+            margin: 10px 30px;
+        }
+        td{
+            padding: 5px 20px;
+        }
+        #next{
+            background: greenyellow;
+            padding: 15px 30px;
+            margin: 30px 40vw !important;
+            border-radius: 15px;
+            text-decoration: none;
+            color: black;
+        }
+        ol{
+            margin: 10px 40px;
+        }
+        #next{
+            background: greenyellow;
+            border-radius: 15px;
+            /* padding: 15px 30px; */
+        }
+    </style>
 </head>
 <body>
     
@@ -21,14 +79,14 @@
     <p>C allows us to do this in a structure definition by putting :bit length after the variable. For example:
     </p>
 
-    <p id="code">
-        struct packed_struct {
-            unsigned int f1:1;
-            unsigned int f2:1;
-            unsigned int f3:1;
-            unsigned int f4:1;
-            unsigned int type:4;
-            unsigned int my_int:9;
+    <p class="code">
+        struct packed_struct {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;unsigned int f1:1;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;unsigned int f2:1;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;unsigned int f3:1;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;unsigned int f4:1;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;unsigned int type:4;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;unsigned int my_int:9;<br>
          } pack;
     </p>
 
@@ -40,6 +98,7 @@
 
     </p>
 
+    <a href="" id="next">Next</a>
 
 </body>
 </html>

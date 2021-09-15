@@ -5,6 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C | Loops</title>
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Zilla Slab', serif;
+        }
+        body{
+            background-color: #052C4E;
+            font-size: 19px;
+            margin: 20px 50px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px 5px;
+        }
+        .code{
+            background-color: #021829;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 15px 10px;
+            font-family: 'Source Code Pro', monospace;
+        }
+        table{
+            margin: 10px 30px;
+        }
+        td{
+            padding: 5px 20px;
+        }
+        #next{
+            background: greenyellow;
+            padding: 15px 30px;
+            margin: 30px 40vw !important;
+            border-radius: 15px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 <body>
 
@@ -28,10 +74,10 @@
         The syntax of a while loop in C programming language is:
     </p>
     
-    <p id="code">
-        while(condition)
-        {
-        statement(s);
+    <p class="code">
+        while(condition) <br>
+        {<br>
+        statement(s); <br>
         }
 
     </p>
@@ -51,17 +97,17 @@
         Example
     </p>
 
-    <p id="code">
-        #include <stdio.h>
-        int main ()
-        {
-        /* local variable definition */ int a = 10;
+    <p class="code">
+        #include <stdio.h> <br>
+        int main () <br>
+        { <br>
+        /* local variable definition */ int a = 10;<br><br>
             
-        /* while loop execution */ while( a < 20 )
-        {
-        printf("value of a: %d\n", a); a++;
-        }
-        return 0;
+        /* while loop execution */ while( a < 20 ) <br>
+        { <br>
+        printf("value of a: %d\n", a); a++;<br>
+        } <br>
+        return 0; <br>
         }
         
     </p>
@@ -69,17 +115,17 @@
     <p>When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">
-        value of a: 10 
-        value of a: 11 
-        value of a: 12 
-        value of a: 13 
-        value of a: 14 
-        value of a: 15 
-        value of a: 16 
-        value of a: 17 
-        value of a: 18
-        value of a: 19
+    <p class="code">
+        value of a: 10 <br>
+        value of a: 11 <br>
+        value of a: 12 <br>
+        value of a: 13 <br>
+        value of a: 14 <br>
+        value of a: 15 <br>
+        value of a: 16 <br>
+        value of a: 17 <br>
+        value of a: 18 <br>
+        value of a: 19 <br>
 
     </p>
     <h2>for loop in C</h2>
@@ -89,10 +135,10 @@
         The syntax of a for loop in C programming language is:
     </p>
 
-    <p id="code">
-        for ( init; condition; increment )
-        {
-        statement(s);
+    <p class="code">
+        for ( init; condition; increment ) <br>
+        {<br>
+        statement(s);<br>
         }
 
     </p>
@@ -115,16 +161,16 @@
     <img src="/assets/data/for loop.png" alt="for loop flow diagram- the statement will be executed while the given condition is true">
 
     <p>Example</p>
-    <p id="code">
-        #include <stdio.h>
-        int main ()
-        {
-        /* for loop execution */
-        for( int a = 10; a < 20; a = a + 1 )
-        {
-        printf("value of a: %d\n", a);
-        }
-        return 0;
+    <p class="code">
+        #include <stdio.h> <br>
+        int main () <br>
+        {<br>
+        /* for loop execution */ <br>
+        for( int a = 10; a < 20; a = a + 1 ) <br>
+        {<br>
+        printf("value of a: %d\n", a);<br>
+        }br
+        return 0;<br>
         }
             
     </p>
@@ -132,17 +178,17 @@
     <p>When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">
-        value of a: 10 
-        value of a: 11 
-        value of a: 12 
-        value of a: 13 
-        value of a: 14 
-        value of a: 15 
-        value of a: 16 
-        value of a: 17 
-        value of a: 18
-        value of a: 19
+    <p class="code">
+        value of a: 10 <br>
+        value of a: 11 <br>
+        value of a: 12 <br>
+        value of a: 13 <br>
+        value of a: 14 <br>
+        value of a: 15 <br>
+        value of a: 16 <br>
+        value of a: 17 <br>
+        value of a: 18 <br>
+        value of a: 19 <br>
 
     </p>
 
@@ -156,11 +202,11 @@
         The syntax of a do...while loop in C programming language is:
     </p>
 
-    <p id="code">
-        do
-        {
-        statement(s);
-        }while( condition );
+    <p class="code">
+        do <br>
+        {<br>
+        statement(s);<br>
+        }while( condition );<br>
 
     </p>
 
@@ -177,16 +223,16 @@
 
     <p>Example</p>
 
-    <p id="code">
-        #include <stdio.h>
-        int main ()
-        {
-        /* local variable definition */ int a = 10;
-        /* do loop execution */ do
-        {
-        printf("value of a: %d\n", a); a = a + 1;
-        }while( a < 20 );
-        return 0;
+    <p class="code">
+        #include <stdio.h> <br>
+        int main () <br>
+        { <br>
+        /* local variable definition */ int a = 10;<br>
+        /* do loop execution */ do <br>
+        {<br>
+        printf("value of a: %d\n", a); a = a + 1; <br>
+        }while( a < 20 );<br>
+        return 0;<br>
         }
         
     </p>
@@ -194,17 +240,17 @@
     <p>When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">
-        value of a: 10
-        value of a: 11 
-        value of a: 12 
-        value of a: 13
-        value of a: 14
-        value of a: 15 
-        value of a: 16 
-        value of a: 17 
-        value of a: 18
-        value of a: 19
+    <p class="code">
+        value of a: 10 <br>
+        value of a: 11  <br>
+        value of a: 12 <br>
+        value of a: 13 <br>
+        value of a: 14 <br>
+        value of a: 15  <br>
+        value of a: 16 <br>
+        value of a: 17 <br>
+        value of a: 18 <br>
+        value of a: 19 <br>
 
     </p>
 
@@ -217,14 +263,14 @@
         The syntax for a nested for loop statement in C is as follows:
     </p>
 
-    <p id="code">
-        for ( init; condition; increment )
-        {
-        for ( init; condition; increment )
-        {
-        statement(s);
-        }
-        statement(s);
+    <p class="code">
+        for ( init; condition; increment ) <br>
+        {<br>
+        for ( init; condition; increment ) <br>
+        { <br>
+        statement(s);<br>
+        } <br>
+        statement(s);<br>
         }
 
     </p>
@@ -232,14 +278,14 @@
     <p>The syntax for a nested while loop statement in the C programming language is as follows:
     </p>
 
-    <p id="code">
-        while(condition)
-        {
-        while(condition)
-        {
-        statement(s);
-        }
-        statement(s);
+    <p class="code">
+        while(condition) <br>
+        {<br>
+        while(condition)br
+        {<br>
+        statement(s);<br>
+        } <br>
+        statement(s);<br>
         }
 
     </p>
@@ -247,13 +293,13 @@
     <p>The syntax for a nested do...while loop statement in C programming language is as follows:
     </p>
 
-    <p id="code">
-        do
-        {
-        statement(s); do
-        {
-        statement(s);
-        }while( condition );
+    <p class="code">
+        do <br>
+        {<br>
+        statement(s); do <br>
+        { <br>
+        statement(s); <br>
+        }while( condition ); <br>
         }while( condition );
 
     </p>
@@ -264,15 +310,15 @@
         The following program uses a nested for loop to find the prime numbers from 2 to 100:
     </p>
 
-    <p id="code">
-        #include <stdio.h>
-        int main ()
-        {
-        /* local variable definition */ int i, j;
-        for(i=2; i<100; i++) { for(j=2; j <= (i/j); j++)
-        if(!(i%j)) break; // if factor found, not prime if(j > (i/j)) printf("%d is prime\n", i);
-        } 
-        return 0;
+    <p class="code">
+        #include <stdio.h> <br>
+        int main () <br>
+        { <br>
+        /* local variable definition */ int i, j; <br>
+        for(i=2; i<100; i++) { for(j=2; j <= (i/j); j++) <br>
+        if(!(i%j)) break; // if factor found, not prime if(j > (i/j)) printf("%d is prime\n", i);<br>
+        } <br>
+        return 0;<br>
         }
             
     </p>
@@ -280,32 +326,32 @@
     <p>When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">
-        2  is prime
-        3  is prime
-        5 is prime
-        7 is prime
-        11 is prime
-        13 is prime
-        17 is prime
-        19 is prime
-        23 is prime
-        29 is prime
-        31 is prime
-        37 is prime
-        41 is prime
-        43 is prime
-        47 is prime
-        53 is prime
-        59 is prime
-        61 is prime
-        67 is prime
-        71 is prime
-        73 is prime
-        79 is prime
-        83 is prime
-        89 is prime
-        97 is prime
+    <p class="code">
+        2  is prime <br>
+        3  is prime <br>
+        5 is prime <br>
+        7 is prime <br>
+        11 is prime <br>
+        13 is prime <br>
+        17 is prime <br>
+        19 is prime <br>
+        23 is prime <br>
+        29 is prime <br>
+        31 is prime <br>
+        37 is prime <br>
+        41 is prime <br>
+        43 is prime <br>
+        47 is prime <br>
+        53 is prime <br>
+        59 is prime <br>
+        61 is prime <br>
+        67 is prime <br>
+        71 is prime <br>
+        73 is prime <br>
+        79 is prime <br>
+        83 is prime <br>
+        89 is prime <br>
+        97 is prime <br>
 
     </p>
 
@@ -327,7 +373,7 @@
         The syntax for a break statement in C is as follows:
     </p>
 
-    <p id="code">
+    <p class="code">
         break;
     </p>
 
@@ -335,21 +381,21 @@
     <img src="/assets/data/break.png" alt="break statement flow diagram- this forces a statement to stop abruptly at any given point">
     <p>Example</p>
 
-    <p id="code">
-        #include <stdio.h>
-        int main ()
-        {
-        /* local variable definition */ int a = 10;
+    <p class="code">
+        #include <stdio.h> <br>
+        int main () <br>
+        { <br>
+        /* local variable definition */ int a = 10; <br>
         
-        /* while loop execution */ while( a < 20 )
-        {
-        printf("value of a: %d\n", a); a++;
-        if( a > 15)
-        {
-        /* terminate the loop using break statement */ break;
-        }
-        }
-        return 0;
+        /* while loop execution */ while( a < 20 ) <br>
+        { <br>
+        printf("value of a: %d\n", a); a++;<br>
+        if( a > 15)<br>
+        {<br>
+        /* terminate the loop using break statement */ break;<br>
+        }<br>
+        }<br>
+        return 0;<br>
         }
             
     </p>
@@ -357,12 +403,12 @@
     <p>When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">
-        value of a: 10 
-        value of a: 11 
-        value of a: 12 
-        value of a: 13 
-        value of a: 14
+    <p class="code">
+        value of a: 10 <br>
+        value of a: 11 <br>
+        value of a: 12 <br>
+        value of a: 13 <br>
+        value of a: 14<br>
         value of a: 15
 
     </p>
@@ -377,26 +423,26 @@
         The syntax for a continue statement in C is as follows:
     </p>
 
-    <p id="code">continue;</p>
+    <p class="code">continue;</p>
     <p>Flow Diagram</p>
 
     <img src="/assets/data/continue.png" alt="continue flow diagram">
 
     <p>Example</p>
-    <p id="code">
-        #include <stdio.h>
-        int main ()
-        {
-        /* local variable definition */ int a = 10;
-        /* do loop execution */ do
-        {
-        if( a == 15)
-        {
-        /* skip the iteration */ a = a + 1;
-        continue;
-        }
-        printf("value of a: %d\n", a); a++;
-        }while( a < 20 ); return 0;
+    <p class="code">
+        #include <stdio.h><br>
+        int main ()<br>
+        {<br>
+        /* local variable definition */ int a = 10;<br>
+        /* do loop execution */ do<br>
+        {<br>
+        if( a == 15)<br>
+        {<br>
+        /* skip the iteration */ a = a + 1;<br>
+        continue;<br>
+        }<br>
+        printf("value of a: %d\n", a); a++;<br>
+        }while( a < 20 ); return 0;<br>
         }
         
 
@@ -405,16 +451,16 @@
     <p>When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">
-        value of a: 10
-        value of a: 11
-        value of a: 12 
-        value of a: 13 
-        value of a: 14 
-        value of a: 16 
-        value of a: 17 
-        value of a: 18
-        value of a: 19
+    <p class="code">
+        value of a: 10<br>
+        value of a: 11<br>
+        value of a: 12 <br>
+        value of a: 13 <br>
+        value of a: 14 <br>
+        value of a: 16 <br>
+        value of a: 17 <br>
+        value of a: 18<br>
+        value of a: 19<br>
 
     </p>
 
@@ -431,11 +477,11 @@
         
     </p>
     
-    <p id="code">
-        goto label;
-        ..
-        .
-        label: statement;
+    <p class="code">
+        goto label;<br>
+        ..<br>
+        .<br>
+        label: statement;<br>
 
     </p>
 
@@ -446,21 +492,21 @@
     <img src="/assets/data/goto .png" alt="goto flow diagram- it instructs the program to go to a specific statement">
 
     <p>Example</p>
-    <p id="code">
-        #include <stdio.h>
-        int main ()
-        {
-        /* local variable definition */ int a = 10;
+    <p class="code">
+        #include <stdio.h><br>
+        int main ()<br>
+        {<br>
+        /* local variable definition */ int a = 10;<br><br>
             
-        /* do loop execution */ LOOP:do
-        {
-        if( a == 15)
-        {
-        /* skip the iteration */ a = a + 1;
-        goto LOOP;
-        }
-        printf("value of a: %d\n", a); a++;
-        }while( a < 20 ); return 0;
+        /* do loop execution */ LOOP:do<br>
+        {<br>
+        if( a == 15)<br>
+        {<br>
+        /* skip the iteration */ a = a + 1;<br>
+        goto LOOP;<br>
+        }<br>
+        printf("value of a: %d\n", a); a++;<br>
+        }while( a < 20 ); return 0;<br>
         }
             
     </p>
@@ -469,31 +515,31 @@
 
     </p>
 
-    <p id="code">
-        value of a: 10 
-        value of a: 11 
-        value of a: 12 
-        value of a: 13
-        value of a: 14 
-        value of a: 16 
-        value of a: 17 
-        value of a: 18
-        value of a: 19
+    <p class="code">
+        value of a: 10 <br>
+        value of a: 11 <br>
+        value of a: 12 <br>
+        value of a: 13<br>
+        value of a: 14 <br>
+        value of a: 16 <br>
+        value of a: 17 <br>
+        value of a: 18<br>
+        value of a: 19<br>
 
     </p>
 
     <h2>The Infinite Loop</h2>
     <p>A loop becomes an infinite loop if a condition never becomes false. The for loop is traditionally used for this purpose. Since none of the three expressions that form the for loop are required, you can make an endless loop by leaving the conditional expression empty.</p>
 
-    <p id="code">
-        #include <stdio.h>
-        int main ()
-        {
-        for( ; ; )
-        {
-        printf("This loop will run forever.\n");
-        }
-        return 0;
+    <p class="code">
+        #include <stdio.h><br>
+        int main ()<br>
+        {<br>
+        for( ; ; )<br>
+        {<br>
+        printf("This loop will run forever.\n");<br>
+        }<br>
+        return 0;<br>
         }
             
     </p>
@@ -503,6 +549,7 @@
         NOTE: You can terminate an infinite loop by pressing Ctrl + C keys.
     </p>
 
+    <a href="" id="next">Next</a>
 
 </body>
 </html>

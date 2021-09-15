@@ -9,13 +9,51 @@
     <!-- ============== css links ============== -->
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
         *{
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             color: white;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Zilla Slab', serif;
+        }
+        body{
+            background-color: #052C4E;
+            font-size: 19px;
+            margin: 20px 50px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px;
+        }
+        .code{
+            background-color: #021829;
+            padding: 15px 10px;
+            border-radius: 10px;
+            font-size: 20px;
+            font-family: 'Source Code Pro', monospace;
+        }
+        table{
+            padding: 10px 40px;
+        }
+        td{
+            padding: 5px 10px;
+        }
+        ol{
+            margin: 5px 50px;
+        }
+        #next{
+            padding: 15px 30px;
+            border-radius: 15px;
+            background: greenyellow;
+            text-decoration: none;
+            color: black;
+            margin: 20px 40vw;
         }
     </style>
 
@@ -37,21 +75,21 @@
         Here are some examples of integer literals:
     </p>
 
-    <p id="code">212         /* Legal */ 
-        215u       /* Legal */ 
-        0xFeeL   /* Legal */
-        078         /* Illegal: 8 is not an octal digit */
-        032UU    /* Illegal: cannot repeat a suffix */
+    <p class="code">212 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Legal */ <br>
+        215u &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /* Legal */ <br>
+        0xFeeL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /* Legal */<br>
+        078  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /* Illegal: 8 is not an octal digit */<br>
+        032UU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Illegal: cannot repeat a suffix */<br>
     </p>
 
     <p>Following are other examples of various types of Integer literals:</p>
-    <p id="code">85         /* decimal */
-        0213     /* octal */
-        0x4b     /* hexadecimal */
-        30         /* int */
-        30u       /* unsigned int */
-        30l        /* long */
-        30ul      /* unsigned long *
+    <p class="code">85 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /* decimal */<br>
+        0213 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* octal */ <br>
+        0x4b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* hexadecimal */<br>
+        30 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /* int */<br>
+        30u &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* unsigned int */<br>
+        30l &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /* long */<br>
+        30ul &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* unsigned long *
         </p>
 
     <h2>Floating-point literals    </h2>
@@ -93,56 +131,56 @@
 
     <table>
         <tr>
-            <tr><h3>Escape Sequences</h3></tr>
-            <tr><h3>Meaning</h3></tr>
+            <td><h2>Escape Sequences</h2></td>
+            <td><h2>Meaning</h2></td>
         </tr>
         <tr>
-            <tr>\\</tr>
-            <tr>\ character</tr>
+            <td>\\</td>
+            <td>\ character</td>
         </tr>
         <tr>
-            <tr>\'</tr>
-            <tr>' character</tr>
+            <td>\'</td>
+            <td>' character</td>
         </tr>
         <tr>
-            <tr>\''</tr>
-            <tr>'' character</tr>
+            <td>\''</td>
+            <td>'' character</td>
         </tr>
         <tr>
-            <tr>\?</tr>
-            <tr>? character/tr>
+            <td>\?</td>
+            <td>? character</td>
         </tr>
         <tr>
-            <tr>\a</tr>
-            <tr>Alert and Bell</tr>
+            <td>\a</td>
+            <td>Alert and Bell</td>
         </tr>
         <tr>
-            <tr>\b</tr>
-            <tr>Backspace</tr>
+            <td>\b</td>
+            <td>Backspace</td>
         </tr>
         <tr>
-            <tr>\f</tr>
-            <tr>Form Feed</tr>
+            <td>\f</td>
+            <td>Form Feed</td>
         </tr>
         <tr>
-            <tr>\n</tr>
-            <tr>Newline</tr>
+            <td>\n</td>
+            <td>Newline</td>
         </tr>
         <tr>
-            <tr>\r</tr>
-            <tr>Carriage return</tr>
+            <td>\r</td>
+            <td>Carriage return</td>
         </tr>
         <tr>
-            <tr>\t</tr>
-            <tr>Horizontal Tab</tr>
+            <td>\t</td>
+            <td>Horizontal Tab</td>
         </tr>
         <tr>
-            <tr>\v</tr>
-            <tr>Vertical Tab</tr>
+            <td>\v</td>
+            <td>Vertical Tab</td>
         </tr>
         <tr>
-            <tr>\ooo</tr>
-            <tr>Ocatl number of one to three digits</tr>
+            <td>\ooo</td>
+            <td>Ocatl number of one to three digits</td>
         </tr>
     </table>
 
@@ -150,18 +188,18 @@
     <p>Following is the example to show few escape sequence characters:
     </p>
 
-    <p id="code">#include<stdio.h>
-        int main()
-        {
-             printf("Hello\tWorld\n\n");
-             return 0;
+    <p class="code">#include<stdio.h><br>
+        int main()<br>
+        {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; printf("Hello\tWorld\n\n");<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; return 0;<br>
         }
     </p>
 
     <p>When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">Hello World</p>
+    <p class="code">Hello World</p>
 
     <h2>String literals</h2>
     <p>String literals or constants are enclosed in double-quotes "". A string contains characters that are similar to character literals: plain characters, escape sequences, and universal characters.
@@ -170,9 +208,9 @@
         Here are some examples of string literals. All three forms are identical strings. 
     </p>
 
-    <p id="code">"hello, dear"
-        "hello, \
-        dear"
+    <p class="code">"hello, dear"<br>
+        "hello,&nbsp;&nbsp; \<br>
+        dear"<br>
         "hello, " "d" "ear"
     </p>
 
@@ -187,7 +225,7 @@
     <h3>The #define preprocessor</h3>
     <p>Following is the form to use #define preprocessor to define a constant:    </p>
 
-    <p id="code">
+    <p class="code">
         #include <stdio.h>
         #define LENGTH 10
         #define WIDTH 5
@@ -206,17 +244,17 @@
     </p>
 
     <p>When the above code is compiled and executed, it will produce the following result:</p>
-    <p id="code">
+    <p class="code">
         value of area: 50
     </p>
 
     <h3>The const keyword</h3>
     <p>You can use the const prefix to declare constants with a specific type as follows:</p>
 
-    <p id="code">const type variable = value;</p>
+    <p class="code">const type variable = value;</p>
 
     <p>The following example explains it in detail:</p>
-    <p id="code">
+    <p class="code">
         #include <stdio.h>
                 
         int main()
@@ -236,11 +274,12 @@
     </p>
 
     <p>When the above code is compiled and executed, it produces the following result:</p>
-    <p id="code">value of the area: 50</p>
+    <p class="code">value of the area: 50</p>
 
     <p>Note that it is a good programming practice to define constants in CAPITALS.
     </p>
 
+    <a href="./" id="next">Next</a>
 
 </body>
 </html>

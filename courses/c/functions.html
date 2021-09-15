@@ -5,6 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C | Functions</title>
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Zilla Slab', serif;
+        }
+        body{
+            background-color: #052C4E;
+            font-size: 19px;
+            margin: 20px 50px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px 5px;
+        }
+        .code{
+            background-color: #021829;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 15px 10px;
+            font-family: 'Source Code Pro', monospace;
+        }
+        table{
+            margin: 10px 30px;
+        }
+        td{
+            padding: 5px 20px;
+        }
+        #next{
+            background: greenyellow;
+            padding: 15px 30px;
+            margin: 30px 40vw !important;
+            border-radius: 15px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 <body>
 
@@ -28,10 +74,10 @@
     <p>The general form of a function definition in the C programming language is as follows:
     </p>
 
-    <p id="code">
-        return_type function_name( parameter list )
-        {
-        body of the function
+    <p class="code">
+        return_type function_name( parameter list )<br>
+        {<br>
+        body of the function<br>
         }
 
     </p>
@@ -64,14 +110,14 @@
         Following is the source code for a function called max(). This function takes two parameters num1 and num2 and returns the maximum between the two:
     </p>
 
-    <p id="code">
-        /* function returning the max between two numbers */ int max(int num1, int num2)
-        {
-        /* local variable declaration */ int result;
-        if (num1 > num2) result = num1;
-        else
-        result = num2;
-        return result;
+    <p class="code">
+        /* function returning the max between two numbers */ int max(int num1, int num2)<br>
+        {<br>
+        /* local variable declaration */ int result;<br>
+        if (num1 > num2) result = num1;<br>
+        else<br>
+        result = num2;<br>
+        return result;<br>
         }
 
     </p>
@@ -82,21 +128,21 @@
         A function declaration has the following parts:
     </p>
 
-    <p id="code">
+    <p class="code">
         return_type function_name( parameter list );
     </p>
 
     <p> For the above defined function max(), following is the function declaration:
     </p>
 
-    <p id="code">
+    <p class="code">
         int max(int num1, int num2);
     </p>
 
     <p>Parameter names are not important in function declaration only their type is required, so the following is also a valid declaration:
     </p>
 
-    <p id="code">int max(int, int);</p>
+    <p class="code">int max(int, int);</p>
 
     <p>A function declaration is required when you define a function in one source file and you call that function in another file. In such a case, you should declare the function at the top of the file calling the function.
     </p>
@@ -113,29 +159,29 @@
 
     </p>
 
-    <p id="code">
-        #include <stdio.h>
+    <p class="code">
+        #include <stdio.h><br>
  
-        /* function declaration */ int max(int num1, int num2);
+        /* function declaration */ int max(int num1, int num2);<br>
             
-        int main ()
-        {
-        /* local variable definition */ int a = 100;
-        int b = 200; int ret;
+        int main ()<br>
+        {<br>
+        /* local variable definition */ int a = 100;<br>
+        int b = 200; int ret;<br>
             
-        /* calling a function to get max value */ ret = max(a, b);
-        printf( "Max value is : %d\n", ret ); return 0;
-        }
+        /* calling a function to get max value */ ret = max(a, b);<br>
+        printf( "Max value is : %d\n", ret ); return 0;<br>
+        }<br>
             
-        /* function returning the max between two numbers */ int max(int num1, int num2)
-        {
-        /* local variable declaration */ int result;
+        /* function returning the max between two numbers */ int max(int num1, int num2)<br>
+        {<br>
+        /* local variable declaration */ int result;<br>
             
-        if (num1 > num2) result = num1;
-        else
-        result = num2;
+        if (num1 > num2) result = num1;<br>
+        else<br>
+        result = num2;<br>
             
-        return result;
+        return result;<br>
         }
             
     </p>
@@ -145,7 +191,7 @@
     </p>
 
 
-    <p id="code">
+    <p class="code">
         Max value is : 200
     </p>
 
@@ -168,38 +214,38 @@
 
     </p>
 
-    <p id="code">
-        /* function definition to swap the values */ void swap(int x, int y)
-        {
-        int temp;
+    <p class="code">
+        /* function definition to swap the values */ void swap(int x, int y)<br>
+        {<br>
+        int temp;<br>
         
-        temp = x; /* save the value of x */ x = y; /* put y into x */
-        y = temp; /* put x into y */
+        temp = x; /* save the value of x */ x = y; /* put y into x */<br>
+        y = temp; /* put x into y */<br>
         
-        return;
+        return;<br>
         }
 
     </p>
 
     <p>Now, let us call the function swap() by passing actual values as in the following example:</p>
 
-    <p id="code">
-        #include <stdio.h>
+    <p class="code">
+        #include <stdio.h><br>
  
-        /* function declaration */ void swap(int x, int y);
+        /* function declaration */ void swap(int x, int y);<br>
             
-        int main ()
-        {
-        /* local variable definition */ int a = 100;
-        int b = 200;
+        int main ()<br>
+        {<br>
+        /* local variable definition */ int a = 100;<br>
+        int b = 200;<br>
             
-        printf("Before swap, value of a : %d\n", a ); printf("Before swap, value of b : %d\n", b );
+        printf("Before swap, value of a : %d\n", a ); printf("Before swap, value of b : %d\n", b );<br>
             
-        /* calling a function to swap the values */ swap(a, b);
+        /* calling a function to swap the values */ swap(a, b);<br>
             
-        printf("After swap, value of a : %d\n", a ); printf("After swap, value of b : %d\n", b );
+        printf("After swap, value of a : %d\n", a ); printf("After swap, value of b : %d\n", b );<br>
             
-        return 0;
+        return 0;<br>
         }
         
     </p>
@@ -207,10 +253,10 @@
     <p>Let us put the above code in a single C file, compile and execute it, it will produce the following result:
     </p>
 
-    <p id="code">
-        Before swap, value of a :100
-        Before swap, value of b :200
-        After swap, value of a :100
+    <p class="code">
+        Before swap, value of a :100<br>
+        Before swap, value of b :200<br>
+        After swap, value of a :100<br>
         After swap, value of b :200
 
     </p>
@@ -226,41 +272,41 @@
         
     </p>
 
-    <p id="code">
-        /* function definition to swap the values */ void swap(int *x, int *y)
-        {
-        int temp;
-        temp = *x;	/* save the value at address x */
-        *x = *y;  	/* put y into x */
-        *y = temp;	/* put x into y */
+    <p class="code">
+        /* function definition to swap the values */ void swap(int *x, int *y)<br>
+        {<br>
+        int temp;<br>
+        temp = *x;	/* save the value at address x */<br>
+        *x = *y;  	/* put y into x */<br>
+        *y = temp;	/* put x into y */<br>
         
-        return;
+        return;<br>
         }
 
     </p>
 
     <p>Let us call the function swap() by passing values by reference as in the following example:</p>
 
-    <p id="code">
-        #include <stdio.h>
+    <p class="code">
+        #include <stdio.h><br>
  
-        /* function declaration */ void swap(int *x, int *y);
+        /* function declaration */ void swap(int *x, int *y);<br>
             
-        int main ()
-        {
-        /* local variable definition */ int a = 100;
-        int b = 200;
+        int main ()<br>
+        {<br>
+        /* local variable definition */ int a = 100;<br>
+        int b = 200;<br>
             
-        printf("Before swap, value of a : %d\n", a ); printf("Before swap, value of b : %d\n", b );
+        printf("Before swap, value of a : %d\n", a ); printf("Before swap, value of b : %d\n", b );<br>
             
-        /* calling a function to swap the values.
-        *  &a indicates pointer to a ie. address of variable a and
-        *  &b indicates pointer to b ie. address of variable b.
-        */
-        swap(&a, &b);
+        /* calling a function to swap the values.<br>
+        *  &a indicates pointer to a ie. address of variable a and<br>
+        *  &b indicates pointer to b ie. address of variable b.<br>
+        */<br>
+        swap(&a, &b);<br>
             
-        printf("After swap, value of a : %d\n", a ); printf("After swap, value of b : %d\n", b );
-        return 0;
+        printf("After swap, value of a : %d\n", a ); printf("After swap, value of b : %d\n", b );<br>
+        return 0;<br>
         }
             
     </p>
@@ -268,10 +314,10 @@
     <p>Let us put the above code in a single C file, compile and execute it, it will produce the following result:
     </p>
 
-    <p id="code">
-        Before swap, value of a :100 
-        Before swap, value of b :200 
-        After swap, value of a :100
+    <p class="code">
+        Before swap, value of a :100 <br>
+        Before swap, value of b :200 <br>
+        After swap, value of a :100<br>
         After swap, value of b :200
 
     </p>
@@ -280,5 +326,6 @@
     <p>This shows that there is no change in the values though they had been changed inside the function.
     </p>
 
+    <a href="" id="next">Next</a>
 </body>
 </html>

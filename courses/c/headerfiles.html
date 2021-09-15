@@ -5,6 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C | HEader Files</title>
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Zilla Slab', serif;
+        }
+        body{
+            background-color: #052C4E;
+            font-size: 19px;
+            margin: 20px 50px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px 5px;
+        }
+        .code{
+            background-color: #021829;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 15px 10px;
+            font-family: 'Source Code Pro', monospace;
+        }
+        table{
+            margin: 10px 30px;
+        }
+        td{
+            padding: 5px 20px;
+        }
+        #next{
+            background: greenyellow;
+            padding: 15px 30px;
+            margin: 30px 40vw !important;
+            border-radius: 15px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,49 +58,49 @@
 
     <p>
         A header file is a file with extension .h which contains C function declarations and macro definitions to be shared between several source files. There are two types of header files: the files that the programmer writes and the files that come with your compiler.
-        Your request to use a header file in your program by including it with the C preprocessing directive #include like you have seen the inclusion of stdio.h header file, which comes along with your compiler.
+        Your request to use a header file in your program by including it with the C preprocessing directive #include like you have seen the inclusion of stdio.h header file, which comes along with your compiler.<br><br>
         Including a header file is equal to copying the content of the header file but we do not do it because it will be error-prone and it is not a good idea to copy the content of a header file in the source files, especially if we have multiple source files in a program.
         A simple practice in C or C++ programs is that we keep all the constants, macros, system-wide global variables, and function prototypes in the header files and include that header file wherever it is required.
-        Include Syntax
-        Both the user and the system header files are included using the preprocessing directive #include. It has the following two forms −
+        <br><br>Include Syntax
+        Both the user and the system header files are included using the preprocessing directive #include.<br> It has the following two forms −
 
     </p>
 
-    <p id="code">#include<file></p>
+    <p class="code">#include<file></p>
 
     <p>This form is used for system header files. It searches for a file named 'file' in a standard list of system directories. You can prepend directories to this list with the -I option while compiling your source code.
     </p>    
 
-    <p id="code">#include "file"</p>
+    <p class="code">#include "file"</p>
     <p>This form is used for header files of your own program. It searches for a file named 'file' in the directory containing the current file. You can prepend directories to this list with the -I option while compiling your source code.</p>
 
     <h2>Include Operation</h2>
     <p>
-        The #include directive works by directing the C preprocessor to scan the specified file as input before continuing with the rest of the current source file. The output from the preprocessor contains the output already generated, followed by the output resulting from the included file, followed by the output that comes from the text after the #include directive. For example, if you have a header file header.h as follows −
+        The #include directive works by directing the C preprocessor to scan the specified file as input before continuing with the rest of the current source file. The output from the preprocessor contains the output already generated, followed by the output resulting from the included file, followed by the output that comes from the text after the #include directive.<br><br> For example, if you have a header file header.h as follows −
     </p>
 
-    <p id="code">char *test (void);</p>
+    <p class="code">char *test (void);</p>
 
     <p>and a main program called program.c that uses the header file, like this −</p>
 
 
-    <p id="code">
-        int x;
-        #include "header.h"
-        int main (void) {
-        puts (test ());
+    <p class="code">
+        int x;<br>
+        #include "header.h"<br>
+        int main (void) {<br>
+        puts (test ());<br>
         }
 
     </p>
 
     <p>the compiler will see the same token stream as it would if program.c read.</p>
      
-    <p id="code">
-        int x;
-        char *test (void);
+    <p class="code">
+        int x;<br>
+        char *test (void);<br>
         
-        int main (void) {
-        puts (test ());
+        int main (void) {<br>
+        puts (test ());<br>
         }
 
     </p>
@@ -63,12 +109,12 @@
     <p>If a header file happens to be included twice, the compiler will process its contents twice and it will result in an error. The standard way to prevent this is to enclose the entire real contents of the file in a conditional, like this −
     </p>
 
-    <p id="code">
-        #ifndef HEADER_FILE
-        #define HEADER_FILE
-        
-        the entire header file file
-        
+    <p class="code">
+        #ifndef HEADER_FILE<br>
+        #define HEADER_FILE<br>
+        <br>
+        the entire header file file<br>
+        <br>
         #endif
 
     </p>
@@ -78,25 +124,27 @@
     <h2>Computed Includes</h2>
     <p>Sometimes it is necessary to select one of the several different header files to be included into your program. For instance, they might specify configuration parameters to be used on different sorts of operating systems. You could do this with a series of conditionals as follows −</p>
 
-    <p id="code">
-        #if SYSTEM_1
-        # include "system_1.h"
-        #elif SYSTEM_2
-        # include "system_2.h"
-        #elif SYSTEM_3
-        ...
+    <p class="code">
+        #if SYSTEM_1<br>
+        # include "system_1.h"<br>
+        #elif SYSTEM_2<br>
+        # include "system_2.h"<br>
+        #elif SYSTEM_3<br>
+        ...<br>
         #endif
 
     </p>
 
     <p>But as it grows, it becomes tedious, instead the preprocessor offers the ability to use a macro for the header name. This is called a computed include. Instead of writing a header name as the direct argument of #include, you simply put a macro name there −</p>
 
-    <p id="code">
-        #define SYSTEM_H "system_1.h"
-        ...
-        #include SYSTEM_H
+    <p class="code">
+        #define SYSTEM_H "system_1.h"<br>
+        ...<br>
+        #include SYSTEM_H<br>
 
     </p>
+
+    <a href="" id="next">Next</a>
 
 </body>
 </html>
