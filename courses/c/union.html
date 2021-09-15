@@ -5,6 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C | Union</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Zilla Slab', serif;
+        }
+        body{
+            background-color: #052C4E;
+            font-size: 19px;
+            margin: 20px 50px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px 5px;
+        }
+        .code{
+            background-color: #021829;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 15px 10px;
+            font-family: 'Source Code Pro', monospace;
+        }
+        table{
+            margin: 10px 30px;
+        }
+        td{
+            padding: 5px 20px;
+        }
+        #next{
+            background: greenyellow;
+            padding: 15px 30px;
+            margin: 30px 40vw !important;
+            border-radius: 15px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 <body>
     
@@ -15,7 +61,7 @@
 
     <p>To define a union, you must use the union statement in a very similar way as you did while defining structure. The union statement defines a new data type, with more than one member for your program. The format of the union statement is as follows:</p>
 
-    <p id="code">
+    <p class="code">
         union [union tag]
         {
         member definition; member definition;
@@ -26,7 +72,7 @@
 
     <p>The union tag is optional and each member definition is a normal variable definition, such as int i; or float f; or any other valid variable definition. At the end of the union's definition, before the final semicolon, you can specify one or more union variables but it is optional. Here is the way you would define a union type named Data which has the three members i, f, and str:</p>
 
-    <p id="code">
+    <p class="code">
         union Data
         {
         int i; float f;
@@ -43,7 +89,7 @@
 
     </p>
 
-    <p id="code">
+    <p class="code">
         #include <stdio.h> #include <string.h>
  
         union Data
@@ -62,14 +108,14 @@
 
     <p>When the above code is compiled and executed, it produces the following result:</p>
 
-    <p id="code">
+    <p class="code">
         Memory size occupied by data : 20
     </p>
 
     <h2>Accessing Union Members</h2>
     <p>To access any member of a union, we use the member access operator (.). The member access operator is coded as a period between the union variable name and the union member that we wish to access. You would use union keyword to define variables of union type. Following is the example to explain usage of union:    </p>
 
-    <p id="code">
+    <p class="code">
         #include <stdio.h> #include <string.h>
  
         union Data
@@ -97,7 +143,7 @@
 
     <p>When the above code is compiled and executed, it produces the following result:    </p>
 
-    <p id="code">
+    <p class="code">
         data.i : 1917853763
         data.f : 4122360580327794860452759994368.000000
         data.str : C Programming
@@ -106,7 +152,7 @@
 
     <p>Here, we can see that values of i and f members of union got corrupted because the final value assigned to the variable has occupied the memory location and this is the reason that the value if str member is getting printed very well. Now let's look into the same example once again where we will use one variable at a time which is the main purpose of having union:</p>
 
-    <p id="code">
+    <p class="code">
         #include <stdio.h> #include <string.h>
  
         union Data
@@ -134,7 +180,7 @@
 
     <p>When the above code is compiled and executed, it produces the following result:</p>
 
-    <p id="code">
+    <p class="code">
         data.i : 10
         data.f : 220.500000
         data.str : C Programming
@@ -142,6 +188,7 @@
 
     <p>Here, all the members are getting printed very well because one member is being used at a time.    </p>
 
+    <a href="" id="next">Next</a>
 
 </body>
 </html>

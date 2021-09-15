@@ -5,6 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C | Scope Rules</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Zilla Slab', serif;
+        }
+        body{
+            background-color: #052C4E;
+            font-size: 19px;
+            margin: 20px 50px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px 5px;
+        }
+        .code{
+            background-color: #021829;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 15px 10px;
+            font-family: 'Source Code Pro', monospace;
+        }
+        table{
+            margin: 10px 30px;
+        }
+        td{
+            padding: 5px 20px;
+        }
+        #next{
+            background: greenyellow;
+            padding: 15px 30px;
+            margin: 30px 40vw !important;
+            border-radius: 15px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 <body>
     
@@ -27,7 +73,7 @@
         Variables that are declared inside a function or block are called local variables. They can be used only by statements that are inside that function or block of code. Local variables are not known to functions outside their own. The following example shows how local variables are used. Here all the variables a, b, and c are local to main() function.
     </p>
 
-    <p id="code">
+    <p class="code">
         #include <stdio.h>
         int main ()
         /* local variable declaration */
@@ -52,7 +98,7 @@
 
     </p>
 
-    <p id="code">
+    <p class="code">
         #include <stdio.h>
  
         /* global variable declaration */
@@ -78,7 +124,7 @@
     <p>A program can have the same name for local and global variables but the value of a local variables inside a function will take preference. Here is an example:
     </p>
 
-    <p id="code">
+    <p class="code">
         #include <stdio.h>
         /* global variable declaration */
         int g = 20;
@@ -98,13 +144,13 @@
     <p>When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">value of g = 10</p>
+    <p class="code">value of g = 10</p>
 
     <h2>Formal Parameters    </h2>
 
     <p>Formal parameters are treated as local variables within a function and they take precedence over global variables. Following is an example:</p>
 
-    <p id="code">
+    <p class="code">
         #include <stdio.h>
  
         /* global variable declaration */
@@ -136,7 +182,7 @@
 
     <p>When the above code is compiled and executed, it produces the following result     </p>
 
-    <p id="code">
+    <p class="code">
         value of a in main() = 10
         value of a in sum() = 10
         value of b in sum() = 20
@@ -179,7 +225,7 @@
     <p>It is a good programming practice to initialize variables properly, otherwise, your program may produce unexpected results because uninitialized variables will take some garbage value already available at their memory location.
     </p>
 
-    
+    <a href="" id="next">Next</a>    
 
 </body>
 </html>

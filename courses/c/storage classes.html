@@ -5,6 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C | Storage Classes</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Zilla Slab', serif;
+        }
+        body{
+            background-color: #052C4E;
+            font-size: 19px;
+            margin: 20px 50px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px 5px;
+        }
+        .code{
+            background-color: #021829;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 15px 10px;
+            font-family: 'Source Code Pro', monospace;
+        }
+        table{
+            margin: 10px 30px;
+        }
+        td{
+            padding: 5px 20px;
+        }
+        #next{
+            background: greenyellow;
+            padding: 15px 30px;
+            margin: 30px 40vw !important;
+            border-radius: 15px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,7 +63,7 @@
     <p>The auto storage class is the default storage class for all local variables.
     </p>
 
-    <p id="code">{
+    <p class="code">{
         int mount;
         auto int month;
         }
@@ -29,7 +75,7 @@
     <h2>The Register Storage Class    </h2>
     <p>The register storage class is used to define local variables that should be stored in a register instead of RAM. This means that the variable has a maximum size equal to the register size (usually one word) and can't have the unary '&' operator applied to it (as it does not have a memory location).</p>
 
-    <p id="code">{
+    <p class="code">{
         register int  miles;
         }
     </p>
@@ -43,7 +89,7 @@
          In C programming, when static is used on a class data member, it causes only one copy of that member to be shared by all objects of its class.
     </p>
 
-    <p id="code">#include <stdio.h>
+    <p class="code">#include <stdio.h>
  
         /* function declaration */ void func(void);
         static int count = 5; /* global variable */ main()
@@ -65,7 +111,7 @@
     <p>You may not understand this example at this time because I have used function and global variables, which I have not explained so far. So for now, let us proceed even if you do not understand it completely. When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">i is 6 and count is 4 
+    <p class="code">i is 6 and count is 4 
         i is 7 and count is 3 
         i is 8 and count is 2 
         i is 9 and count is 1
@@ -83,7 +129,7 @@
         First File: main.c
     </p>
 
-    <p id="code">#include <stdio.h>
+    <p class="code">#include <stdio.h>
         int count ;
        extern void write_extern();
        main()
@@ -94,7 +140,7 @@
 
     <p>Second File: write.c</p>
 
-    <p id="code">#include <stdio.h> extern int count;
+    <p class="code">#include <stdio.h> extern int count;
         void write_extern(void)
         {
         count = 5;
@@ -104,13 +150,13 @@
 
     <p>Here, the extern keyword is being used to declare count in the second file whereas it has its definition in the first file, main.c. Now, compile these two files as follows:</p>
 
-    <p id="code">$gcc main.c write.c</p>
+    <p class="code">$gcc main.c write.c</p>
 
     <p>This will produce a.out executable program, when this program is executed, it produces the following result:</p>
 
-    <p id="code">5</p>
+    <p class="code">5</p>
 
-
+    <a href="" id="next">Next</a>
 
 </body>
 </html>

@@ -5,6 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C | Strings</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Zilla Slab', serif;
+        }
+        body{
+            background-color: #052C4E;
+            font-size: 19px;
+            margin: 20px 50px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px 5px;
+        }
+        .code{
+            background-color: #021829;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 15px 10px;
+            font-family: 'Source Code Pro', monospace;
+        }
+        table{
+            margin: 10px 30px;
+        }
+        td{
+            padding: 5px 20px;
+        }
+        #next{
+            background: greenyellow;
+            padding: 15px 30px;
+            margin: 30px 40vw !important;
+            border-radius: 15px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 <body>
 
@@ -15,17 +61,17 @@
         The following declaration and initialization create a string consisting of the word "Hello". To hold the null character at the end of the array, the size of the character array containing the string is one more than the number of characters in the word "Hello."
     </p>
 
-    <p id="code">char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};</p>
+    <p class="code">char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};</p>
 
     <p>If you follow the rule of array initialization then you can write the above statement as follows −</p>
 
-    <p id="code">char greeting[] = "Hello";</p>
+    <p class="code">char greeting[] = "Hello";</p>
 
     <p>Following is the memory presentation of the above-defined string in C/C++ −
         Actually, you do not place the null character at the end of a string constant. The C compiler automatically places the '\0' at the end of the string when it initializes the array. Let us try to print the above-mentioned string:
     </p>
 
-    <p id="code">
+    <p class="code">
         #include <stdio.h>
         int main () {
             char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
@@ -90,13 +136,13 @@
     </table>
 
 
-    <p id="code">Greeting message: Hello    </p>
+    <p class="code">Greeting message: Hello    </p>
 
     <p>C supports a wide range of functions that manipulate null-terminated strings:
         The following example uses some of the above-mentioned functions:
     </p>
 
-    <p id="code">
+    <p class="code">
         #include <stdio.h>
         #include <string.h>
             
@@ -125,12 +171,14 @@
 
     <p>When the above code is compiled and executed, it produces the following result −    </p>
 
-    <p id="code">
+    <p class="code">
         strcpy( str3, str1) :  Hello
         strcat( str1, str2):   HelloWorld
         strlen(str1) :  10
 
     </p>
+
+    <a href="" id="next">Next</a>
 
 </body>
 </html>

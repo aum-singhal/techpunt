@@ -5,28 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C | TypeDef</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Zilla Slab', serif;
+        }
+        body{
+            background-color: #052C4E;
+            font-size: 19px;
+            margin: 20px 50px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px 5px;
+        }
+        .code{
+            background-color: #021829;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 15px 10px;
+            font-family: 'Source Code Pro', monospace;
+        }
+        table{
+            margin: 10px 30px;
+        }
+        td{
+            padding: 5px 20px;
+        }
+        #next{
+            background: greenyellow;
+            padding: 15px 30px;
+            margin: 30px 40vw !important;
+            border-radius: 15px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 <body>
 
     <h1>TypeDef</h1>
     <p>The C programming language provides a keyword called typedef, which you can use to give a type a new name. Following is an example to define the term BYTE for one-byte numbers:    </p>
     
-    <p id="code">typedef unsigned char BYTE;</p>
+    <p class="code">typedef unsigned char BYTE;</p>
 
     <p>After this type definitions, the identifier BYTE can be used as an abbreviation for the type unsigned char, for example:
     </p>
 
-    <p id="code">BYTE  b1, b2;</p>
+    <p class="code">BYTE  b1, b2;</p>
 
     <p>By convention, uppercase letters are used for these definitions to remind the user that the type name is really a symbolic abbreviation, but you can use lowercase, as follows:
     </p>
 
-    <p id="code">typedef unsigned char byte;</p>
+    <p class="code">typedef unsigned char byte;</p>
     <p>
         You can use typedef to give a name to user-defined data type as well. For example, you can use typedef with the structure to define a new data type and then use that data type to define structure variables directly as follows:
     </p>
 
-    <p id="code">#include <stdio.h> #include <string.h>
+    <p class="code">#include <stdio.h> #include <string.h>
  
         typedef struct Books
         {
@@ -56,7 +102,7 @@
     </p>
     <p>When the above code is compiled and executed, it produces the following result:</p>
 
-    <p id="code">
+    <p class="code">
         Book  title : C Programming Book  author : Nuha Ali
         Book  subject : C Programming Tutorial
         Book  book_id : 6495407
@@ -74,7 +120,7 @@
 
     <p>Following is a simplest usage of #define:</p>
 
-    <p id="code">
+    <p class="code">
         #include <stdio.h>
  
         #define TRUE  1
@@ -91,12 +137,13 @@
 
     <p>When the above code is compiled and executed, it produces the following result:    </p>
 
-    <p id="code">
+    <p class="code">
         Value of TRUE : 1
         Value of FALSE : 0
 
     </p>
 
-
+    <a href="" id="next">Next</a>
+    
 </body>
 </html>

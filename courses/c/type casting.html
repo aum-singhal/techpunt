@@ -5,6 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>c | Type Casting</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Zilla Slab', serif;
+        }
+        body{
+            background-color: #052C4E;
+            font-size: 19px;
+            margin: 20px 50px;
+        }
+        h1, h2{
+            text-align: center;
+            margin: 20px 0;
+        }
+        p{
+            margin: 10px 5px;
+        }
+        .code{
+            background-color: #021829;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 15px 10px;
+            font-family: 'Source Code Pro', monospace;
+        }
+        table{
+            margin: 10px 30px;
+        }
+        td{
+            padding: 5px 20px;
+        }
+        #next{
+            background: greenyellow;
+            padding: 15px 30px;
+            margin: 30px 40vw !important;
+            border-radius: 15px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,11 +58,11 @@
     <p>Converting one datatype into another is known as type casting or, type-conversion. For example, if you want to store a 'long' value into a simple integer then you can type cast 'long' to 'int'. You can convert the values from one type to another explicitly using the cast operator as follows −
     </p>
 
-    <p id="code">(type_name) expression</p>
+    <p class="code">(type_name) expression</p>
     <p>Consider the following example where the cast operator causes the division of one integer variable by another to be performed as a floating-point operation −
     </p>  
 
-    <p id="code">
+    <p class="code">
         #include <stdio.h>
 
         main() {
@@ -32,7 +78,7 @@
 
     <p>When the above code is compiled and executed, it produces the following result −</p>
     
-    <p id="code">Value of mean : 3.400000</p>
+    <p class="code">Value of mean : 3.400000</p>
 
     <p>
         It should be noted here that the cast operator has precedence over division, so the value of sum is first converted to type double and finally it gets divided by count yielding a double value.
@@ -43,7 +89,7 @@
     <h2>Integer Promotion</h2>
     <p>Integer promotion is the process by which values of integer type "smaller" than int or unsigned int are converted either to int or unsigned int. Consider an example of adding a character with an integer −</p>
 
-    <p id="code">
+    <p class="code">
 
         #include <stdio.h>
  
@@ -61,7 +107,7 @@
 
     <p>When the above code is compiled and executed, it produces the following result −    </p>
 
-    <p id="code">Value of sum : 116    </p>
+    <p class="code">Value of sum : 116    </p>
 
     <p>Here, the value of sum is 116 because the compiler is doing integer promotion and converting the value of 'c' to ASCII before performing the actual addition operation.</p>
 
@@ -74,7 +120,7 @@
     <p>The usual arithmetic conversions are not performed for the assignment operators, nor for the logical operators && and ||. Let us take following example to understand the concept:
     </p>
 
-    <p id="code">
+    <p class="code">
         #include <stdio.h>
  
         main()
@@ -93,13 +139,13 @@
     <p>When the above code is compiled and executed, it produces the following result:
     </p>
 
-    <p id="code">Value of sum : 116.000000    </p>
+    <p class="code">Value of sum : 116.000000    </p>
 
     <p>
         Here, it is simple to understand that first c gets converted to integer but because final value is double, so usual arithmetic conversion applies and compiler convert i and c into float and add them yielding a float result.
     </p>
 
-
+    <a href="" id="next">Next</a>
 
 
 </body>
